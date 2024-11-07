@@ -1,0 +1,148 @@
+/* Definisce la sezione home con altezza viewport su schermi grandi */
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Personalizza il contenuto interno del carousel */
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Pannello nero semitrasparente */
+    padding: 20px;
+    border-radius: 7px;
+    color: #ffffff !important; /* Assicura che il testo sia leggibile */
+    max-width: 70%; /* Limita la larghezza per evitare che occupi tutto lo schermo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);   
+    text-align: center;
+    font-size: 1.1rem;
+    
+}
+
+.carousel-caption:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+}
+
+
+/*css navbar per aumentare la grandezza del font quando si passa il cursore sopra*/
+@media (min-width: 992px) {
+  .nav-link {
+      transition: transform 0.2s ease; /* Transizione fluida */
+  }
+
+  .nav-link:hover {
+      transform: scale(1.1); /* Ingrandisce leggermente il testo solo sugli schermi grandi */
+  }
+}
+/*fine CSS navbar*/
+
+/*css per le icone nelle card della sezione servizi*/
+.icon {
+  width: 70px; /* Dimensioni dell'icona */
+  height: 70px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+/*css per le card della sezione servizi*/
+.card-wrapper {
+    margin-bottom: 20px; /* Aggiungi margine inferiore per distanziare le card */
+    margin-top: 40px;
+}
+
+.card-text {
+    margin-top: 20px; /* Distanza sopra il testo */
+    text-align: center;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+#servizi {
+  margin-top: 60px; /* Spazio sopra la sezione servizi */
+}
+
+#lineaSezioni {
+  height: 3px; 
+  width: 40%;
+  opacity: 0.6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  background-color: #0f110f;
+}
+
+.card {
+  flex: 1 1 250px;
+  max-width: 600px;
+  min-height: 350px; /* Riduci l'altezza minima della card per meno spazio vuoto */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Centra il contenuto all'interno della card */
+}
+
+/* Linea orizzontale all'interno della card per uniformità */
+.card hr {
+  width: 60%;                     /* Larghezza della linea rispetto alla card */
+  margin: 15px auto;              /* Centra la linea orizzontalmente */
+  border: 0;
+  border-top: 2px solid #ddd;     /* Colore e spessore della linea */
+}
+
+.card .icon {
+  align-self: center;             /* Centra l'icona */
+}
+
+.card .card-text {
+  margin-top: 10px;
+  text-align: center;
+  flex-grow: 1;                   /* Assicura che le descrizioni abbiano altezza uniforme */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  width: 100%;
+  margin-top:20px; /* Aggiunge margine sopra il contenuto */
+}
+
+
+
+/* Responsive layout per schermi piccoli */
+@media (max-width: 576px) {
+  .card {
+      width: 80%; /* Card più stretta su schermi piccoli */
+      margin: 0 auto; /* Centra la card */
+  }
+}
+
+
