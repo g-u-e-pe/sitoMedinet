@@ -1,3 +1,17 @@
+/* Aggiungi padding-top alle sezioni per tenere conto della navbar fissa */
+html {
+  scroll-padding-top: 70px; /* Altezza della navbar, puoi modificare questo valore se necessario */
+}
+
+/* Ottimizzazione della visualizzazione mobile */
+@media (max-width: 768px) {
+  html {
+      scroll-padding-top: 56px; /* Altezza più bassa per dispositivi mobili */
+  }
+}
+
+
+
 /* Definisce la sezione home con altezza viewport su schermi grandi */
 #home {
   height: 100vh;
@@ -20,6 +34,7 @@
 .carousel-item img {
   height: 100%;
   object-fit: cover;
+  /*  filter: grayscale(100%) brightness(1.2) sepia(1) hue-rotate(180deg) saturate(2);  */
 }
 
 .carousel-caption {
@@ -44,105 +59,450 @@
 }
 
 
-/*css navbar per aumentare la grandezza del font quando si passa il cursore sopra*/
+/*----------CSS NAVBAR per aumentare la grandezza del font quando si passa il cursore sopra*/
 @media (min-width: 992px) {
   .nav-link {
-      transition: transform 0.2s ease; /* Transizione fluida */
+    transition: transform 0.2s ease; /* Transizione fluida */
   }
 
   .nav-link:hover {
-      transform: scale(1.1); /* Ingrandisce leggermente il testo solo sugli schermi grandi */
+    transform: scale(1.1); /* Ingrandisce leggermente il testo solo sugli schermi medi e grandi */
   }
 }
-/*fine CSS navbar*/
+
+/* Definisce il comportamento della navbar */
+.navbar {
+  transition: background-color 0.3s ease;
+}
+
+.navbar-scrolled {
+  background-color: rgba(8, 100, 156, 0.8);
+}
+
+/* Stili generali per il link della navbar */
+.nav-link {
+  color: #283747;
+}
+
+/* Quando il link è attivo, applica l'ingrandimento solo su schermi medi e grandi */
+.nav-link.active-link {
+  border-bottom: 2px solid #08649c;
+  color: #08649c;
+  transition: transform 0.2s ease;
+}
+
+/* Schermi medi e grandi */
+@media (min-width: 768px) {
+  .nav-link.active-link {
+    transform: scale(1.1); /* Solo sugli schermi medi e grandi */
+  }
+}
+
+/* Stili per il brand della navbar */
+.navbar-brand {
+  font-weight: bold;
+}
+/*fine CSS NAVBAR*/
+
+
+
+/* CSS per la linea sotto il titolo di ogni sezione */
+#lineaSezioni {
+  height: 4px;
+  width: 40%; /* Larghezza della linea */
+  margin: 10px auto;
+  background: linear-gradient(90deg, #0043d4, #42a5f5); /* Gradiente invertito su hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Ombra più forte su hover */
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px; /* Angoli arrotondati */
+  margin-top: 25px;
+}
+
+/* Effetto hover per la linea */
+#lineaSezioni:hover {
+  width: 70%; /* Linea più larga su hover */
+  background: linear-gradient(90deg, #42a5f5, #0043d4); /* Gradiente invertito su hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Ombra più forte su hover */
+  transform: translateY(-2px); /* Effetto di sollevamento 3D */
+}
+
+
+
+
+
+/*------------------------------INIZIO CSS #SERVIZI---------------------------------------------------*/
 
 /*css per le icone nelle card della sezione servizi*/
-.icon {
-  width: 70px; /* Dimensioni dell'icona */
-  height: 70px;
-  padding: 5px;
+#servizi .icon {
+  width: 90px; /* Dimensione dell'icona */
+  height: 90px;
+  padding: 10px; /* Aggiungi un po' più di spazio interno */
   margin-bottom: 20px;
+  background-color: #fdfcfc; /* Colore di sfondo chiaro (puoi usare anche un colore pastello) */
+  border-radius: 50%; /* Rendi l'icona rotonda */
+  border: 2px solid #ddd; /* Bordi sottili e chiari */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombra leggera per dare profondità */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease; /* Transizione morbida per ogni cambiamento */
 }
 
-/*css per le card della sezione servizi*/
-.card-wrapper {
-    margin-bottom: 20px; /* Aggiungi margine inferiore per distanziare le card */
-    margin-top: 40px;
+
+/*quando c'è hover sulla card, aumenta anche la dimensione dell'icona*/
+#servizi .card:hover .icon {
+  background-color: #fdfcfc; /* Colore di sfondo più scuro al passaggio del mouse */
+  transform: scale(1.1); /* Leggera animazione di ingrandimento */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ombra più marcata al passaggio del mouse */
 }
 
-.card-text {
-    margin-top: 20px; /* Distanza sopra il testo */
-    text-align: center;
-    font-size: 1rem;
-    flex-grow: 1;
+/*quando c'è hover sulla card, aumenta anche la dimensione del titolo sotto l'icona*/
+#servizi .card:hover .card-title {
+  transform: scale(1.1); /* Ingrandimento del titolo */
 }
+
 
 #servizi {
   margin-top: 60px; /* Spazio sopra la sezione servizi */
 }
 
-#lineaSezioni {
-  height: 3px; 
-  width: 40%;
-  opacity: 0.6;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  background-color: #0f110f;
+#servizi .card-wrapper {
+    margin-bottom: 30px; /* Più spazio tra le card */
+    margin-top: 40px;
 }
 
-.card {
+#servizi .card {
   flex: 1 1 250px;
   max-width: 600px;
-  min-height: 350px; /* Riduci l'altezza minima della card per meno spazio vuoto */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  min-height: 320px; /* Altezza minima della card */
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombra più morbida */
+  border-radius: 10px;
+  background-color: #fdfdfd;
   display: flex;
   flex-direction: column;
-  align-items: center;       /* Centra il contenuto all'interno della card */
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetto hover */
 }
 
-/* Linea orizzontale all'interno della card per uniformità */
-.card hr {
-  width: 60%;                     /* Larghezza della linea rispetto alla card */
-  margin: 15px auto;              /* Centra la linea orizzontalmente */
+#servizi .card:hover {
+  transform: translateY(-5px); /* Leggera animazione su hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Ombra più evidente su hover */
+}
+
+#servizi .card-title {
+  color: #4867a1; /* Colore leggermente più scuro per il titolo */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+
+
+#servizi .card hr {
+  width: 50%; /* Ridimensionamento per estetica */
+  margin: 15px auto;
   border: 0;
-  border-top: 2px solid #ddd;     /* Colore e spessore della linea */
+  border-top: 2px solid #d1cccc; /* Colore più tenue */
 }
 
-.card .icon {
-  align-self: center;             /* Centra l'icona */
+#servizi .icon {
+  align-self: center;
+  font-size: 2.5rem; /* Dimensione icona leggermente maggiore */
+  color: #007bff;
+  margin-bottom: 15px;
 }
 
-.card .card-text {
+#servizi .card-text {
   margin-top: 10px;
   text-align: center;
-  flex-grow: 1;                   /* Assicura che le descrizioni abbiano altezza uniforme */
+  font-size: 1rem;
+  color: #666; /* Colore del testo per una leggibilità ottimale */
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.card-content {
+#servizi .card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-grow: 1;
   width: 100%;
-  margin-top:20px; /* Aggiunge margine sopra il contenuto */
+  margin-top: 20px;
 }
-
-
 
 /* Responsive layout per schermi piccoli */
 @media (max-width: 576px) {
-  .card {
-      width: 80%; /* Card più stretta su schermi piccoli */
-      margin: 0 auto; /* Centra la card */
+  #servizi .card {
+      width: 90%; /* Card leggermente più stretta su schermi piccoli */
+      margin: 0 auto;
   }
+
+  #servizi .card-title {
+    font-size: 1.1rem; /* Dimensione titolo leggermente ridotta su mobile */
+  }
+}
+
+/*--------------FINE CSS SEZIONE #SERVIZI ------------------------------------*/
+
+
+
+
+/* ------- INIZIO CSS SEZIONE #SEDI ------------------------------------------------ */
+/* SEZIONE SEDI */
+.sedi-wrapper {
+  margin-top: 60px; /* Spazio sopra la sezione sedi */
+}
+
+.sedi-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.sedi-card .card-map-body {
+  display: flex;
+  flex-direction: row; /* Disposizione orizzontale tra mappa e elenco */
+}
+
+.sedi-card .sedi-text {
+  padding-right: 15px;
+}
+
+.sedi-card .sedi-mappa {
+  height: 580px; /* Altezza fissa per la mappa */
+  
+}
+
+/* Responsive per schermi medio-piccoli */
+@media (max-width: 991px) {
+  .sedi-card .card-map-body {
+    flex-direction: column; /* La mappa va sopra l'elenco */
+    align-items: center; /* Centra il contenuto orizzontalmente */
+  }
+
+  .sedi-card .sedi-mappa {
+    height: 400px; /* Altezza ridotta per la mappa sui dispositivi più piccoli */
+    width: 100%;  /* Imposta la larghezza al 100% per occupare tutto lo spazio disponibile */
+    
+  }
+
+  .sedi-card .sedi-text {
+    padding-right: 0; /* Rimuove il padding per evitare spazi vuoti */
+    margin-top: 15px;
+    text-align: center; /* Centra il testo */
+    width: 100%; /* Assicura che occupi tutta la larghezza disponibile */
+  }
+
+  /* Assicurati che la card stessa sia centrata */
+  .sedi-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Responsive per schermi molto piccoli */
+@media (max-width: 576px) {
+  .sedi-card .card-map-body {
+    flex-direction: column; /* Ancora colonna, ma con ancora più spazio per i contenuti */
+  }
+
+  .sedi-card .sedi-mappa {
+    height: 300px; /* Riduce ulteriormente l'altezza della mappa */
+  }
+}
+
+/* --- Stile per il contenitore delle informazioni delle sedi --- */
+
+/* Stile per il contenitore delle informazioni delle sedi */
+.sedi-text {
+  padding: 20px;
+  background-color: #f9f9f9; /* Colore di sfondo chiaro */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leggera ombreggiatura */
+}
+
+/* Titolo della sezione */
+.sedi-text h5 {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Stile per ogni sede */
+.sedi-item {
+  padding: 15px;
+  background-color: #fff; /* Sfondo bianco per ogni sede */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+}
+
+/* Stile per il titolo della sede */
+.sedi-header h6 {
+  font-size: 1.1rem;
+  color: #4867a1; /* Colore blu per i titoli */
+}
+
+/* Dettagli della sede (città e indirizzo) */
+.sedi-details p {
+  font-size: 0.95rem;
+  color: #555; /* Colore grigio per i dettagli */
+  margin: 5px 0;
+}
+
+
+
+.sedi-item.mb-3 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transizione per un effetto fluido */
+  list-style-type: none; /* Rimuove il puntatore di default dei list item */
+}
+
+.sedi-item.mb-3:hover {
+  transform: translateY(-5px); /* Sollevamento leggero verso l'alto */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombra più pronunciata su hover */
+}
+
+
+/*POPUP che si apre quando si clicca il marker sulla mappa*/
+.custom-popup {
+  background-color: #ffffff; /* Sfondo bianco per un look pulito */
+  border-radius: 12px; /* Arrotonda gli angoli per un aspetto moderno */
+  padding: 15px; /* Spaziatura interna per separare il contenuto dai bordi */
+  font-size: 1rem; /* Dimensione testo chiara e leggibile */
+  color: #333; /* Colore testo per buona leggibilità */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Ombra morbida per profondità */
+  max-width: 220px; /* Larghezza massima per mantenere il layout compatto */
+  overflow: hidden; /* Nasconde eventuali contenuti che escono dai bordi */
+}
+
+.custom-popup h4 {
+  font-size: 1.1rem; /* Titolo leggermente più grande */
+  font-weight: bold; /* Rende il titolo in grassetto */
+  color: #007bff; /* Verde smeraldo per un tocco elegante */
+  margin: 0 0 8px; /* Spazio sotto il titolo */
+}
+/*--------------------------- FINE CSS SEZIONE #SEDI--------------------- */
+
+
+
+
+/*------------------ INIZIO SEZIONE CLIENTI ---------------- */
+
+/*spazio sopra la scritta "i nostri clienti" */
+#clienti{
+  margin-top: 70px;
+}
+/*spazio sotto la scritta "i nostri clienti" */
+.sezioneLoghiClienti{
+  margin-top: 50px;
+}
+
+.logo {
+  object-fit: contain; /* Adatta il logo all'area preservando le proporzioni */
+ 
+}
+
+.logo:hover {
+  filter: none; /* Rimuove il filtro al passaggio del mouse */
+}
+
+
+/* Stili specifici per ogni logo utilizzando il nome originale */
+.wind {
+  width: 110px;
+  height: 80px;
+  filter: grayscale(100%) brightness(0.5) sepia(1) hue-rotate(180deg) saturate(2);
+}
+
+.tim {
+  width: 140px;
+  height: 70px;
+  filter: grayscale(100%) brightness(1.2) sepia(1) hue-rotate(180deg) saturate(2);
+}
+
+.vodafone {
+  width: 120px;
+  height: 90px;
+  filter: grayscale(100%) brightness(0.9) sepia(1) hue-rotate(180deg) saturate(2);
+}
+
+.zte {
+  width: 90px;
+  height: 75px;
+  filter: grayscale(100%) brightness(0.5) sepia(1) hue-rotate(180deg) saturate(2);
+  
+
+}
+
+.ericcson {
+  width: 175px;
+  height: 95px;
+  filter: grayscale(100%) brightness(2.2) sepia(1) hue-rotate(180deg) saturate(2);
+}
+
+.huawei {
+  width: 75px;
+  height: 80px;
+  filter: grayscale(100%) brightness(1.4) sepia(1) hue-rotate(180deg) saturate(2);
+}
+
+.inwit {
+  width: 190px;
+  height: 85px;
+  filter: grayscale(100%) brightness(0.5) sepia(1) hue-rotate(180deg) saturate(2);
+  margin-top: 10px;
+}
+
+.cellnex {
+  width: 170px;
+  height: 90px;
+  filter: grayscale(100%) brightness(0.5) sepia(1) hue-rotate(180deg) saturate(2);
+  margin-top: 5px;
+}
+
+/*------------------ FINE SEZIONE CLIENTI ---------------- */
+
+
+
+
+/* Nascondere la descrizione inizialmente */
+.servizi-card-description {
+  display: none; /* La descrizione è nascosta per default */
+  opacity: 0;
+  transform: translateY(10px); /* La descrizione si sposterà leggermente in basso quando appare */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transizione fluida per l'opacità e il movimento */
+  margin-top: 15px; /* Distanza tra il contenuto e la descrizione */
+  color: #555; /* Colore del testo per la descrizione, più morbido */
+  font-size: 16px; /* Font più grande per una migliore leggibilità */
+  line-height: 1.6; /* Maggiore spaziatura tra le righe per migliorare la leggibilità */
+  text-align: center; /* Centrato il testo */
+  padding: 0 20px; /* Aggiunta di un po' di spazio laterale per non toccare i bordi */
+  font-weight: 400; /* Peso del font normale */
+}
+
+/* Quando si passa sopra la card */
+#servizi .card:hover .servizi-card-description {
+  display: block;
+  opacity: 1; /* La descrizione diventa visibile */
+  transform: translateY(0); /* La descrizione si sposta nella posizione finale */
+}
+
+/* Leggera animazione e ombra per la card */
+#servizi .card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animazione fluida per il sollevamento della card e la ombra */
+}
+
+#servizi .card:hover {
+  transform: translateY(-10px); /* Leggero sollevamento della card */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombra più prominente */
 }
 
 

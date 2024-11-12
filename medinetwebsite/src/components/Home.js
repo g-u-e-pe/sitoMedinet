@@ -3,6 +3,13 @@ import '../App.css';
 import '../index.css';
 
 
+//importiamo librerie per la mappa -> sezione "le nostre sedi"
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+import iconMap from "../assets/icons/position.png";
+
+
 //Importiamo le icone per la sezione servizi
 import TelefoniaMobile from '../assets/icons/telefoniaMobile.png';
 import TelefoniaFissa from '../assets/icons/TelefoniaFissa.png';
@@ -15,21 +22,73 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 
 
 // Importiamo i loghi delle aziende per la sezione clienti
-import Logo1 from '../assets/logos/wind.png';
-import Logo2 from '../assets/logos/tim.png';
-import Logo3 from '../assets/logos/vodafone.png';
-import Logo4 from '../assets/logos/zte.png';
-import Logo5 from '../assets/logos/ericcson.png';
-import Logo6 from '../assets/logos/huawei.png';
-import Logo7 from '../assets/logos/inwit.png';
-import Logo8 from '../assets/logos/cellnex.png';
+import LogoWind from '../assets/logos/wind.png';
+import LogoTim from '../assets/logos/tim.png';
+import LogoVodafone from '../assets/logos/vodafone.png';
+import LogoZte from '../assets/logos/zte.png';
+import LogoEriccson from '../assets/logos/ericcson.png';
+import LogoHuawei from '../assets/logos/huawei.png';
+import LogoInwit from '../assets/logos/inwit.png';
+import LogoCellNex from '../assets/logos/cellnex.png';
 
 //importiamo le foto della homepage che andranno nel carousel 
 import HomePage1 from '../assets/images/HomePage1.jpg';
 import HomePage2 from '../assets/images/HomePage2.jpg';
 import HomePage3 from '../assets/images/HomePage3.jpg';
 
+
+
+
 const Home = () => {
+    //position_potenza corrisponde alle coordinate di potenza che vengono visualizzate nella mappa (utili perchè rappresentano il centro tra campania e basilicata)
+    const position_potenza= [40.646040469819354, 15.809515347484554]
+    const sedeData = [
+        {
+          id: 1,
+          title: "Sede Legale",
+          location: "75015 Marconia (MT)",
+          address: "Via Parmisco, 20",
+          coordinates: [40.368822433624565, 16.691240104409857]
+          
+        },
+        {
+          id: 2,
+          title: "Unità Locale Basilicata e Calabria",
+          location: "75013 Ferrandina (MT)",
+          address: "SS 407 Basentana, Borgo Macchia",
+          coordinates: [40.470923822271686, 16.50222123474668]
+        },
+        {
+            id: 3,
+            title: "Unità Locale Campania",
+            location: "80026 Casoria (NA)",
+            address: "Via Ponza, 3",
+            coordinates: [40.898638334620394, 14.317064950111815]
+          },
+
+          {
+            id: 4,
+            title: "Unità Locale Puglia",
+            location: "70026 Modugno (BA)",
+            address: "Contrada Macchia Madama, SS96 Km 115,200",
+            coordinates: [41.0892474583844, 16.780158460654903]
+          }
+      ]; 
+
+    //icona personalizzata mappa
+      const customIcon = new L.Icon({
+        iconUrl: iconMap, // Cambia questo con il percorso dell'icona
+        iconSize: [32, 32], // Imposta la dimensione dell'icona
+        iconAnchor: [16, 32], // Punto in cui l'icona si ancorerà rispetto alle coordinate
+        popupAnchor: [0, -32], // Punto in cui il popup si ancorerà rispetto alle coordinate
+        zIndexOffset: 1000 // Ensure markers stay on top
+      });
+
+
+
+      /*SEZIONE LOGHI*/
+      
+
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -149,6 +208,10 @@ const Home = () => {
                                             Infrastrutture e soluzioni per le reti mobili.
                                         </p>
                                         </div>
+                                        
+                                        <div className="servizi-card-description">
+                                        <p>MEDINET si occupa di progettazione, installazione e ottimizzazione delle reti di telefonia mobile, inclusi sistemi radio (2G, 3G, 4G, 5G) e stazioni radio base. Gestisce anche decommissioning, migrazione tecnologica, e rinnovo di permessi e contratti per le infrastrutture mobili.</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -173,6 +236,10 @@ const Home = () => {
                                         Servizi di comunicazione fissa ad alta qualità.
                                         </p>
                                         </div>
+                                        
+                                        <div className="servizi-card-description">
+                                        <p>MEDINET esegue attività di Installation & Commissioning (I&C) su apparati di accesso fisso (come ISAM, MSAN, ONUcab, OLT) e di trasporto (SDH, WDM, DWDM). Si occupa anche di lavori su centrali Telecom, come la compattazione ATM e il decommissioning PSTN.</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -199,6 +266,9 @@ const Home = () => {
                                         Soluzioni energetiche e trasporti sostenibili.
                                         </p>
                                         </div>
+                                        <div className="servizi-card-description">
+                                        <p>MEDINET si occupa della progettazione di reti elettriche, impianti da fonti di energia alternative e colonnine di ricarica per auto elettriche.</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -225,6 +295,9 @@ const Home = () => {
                                         Tecnologie IoT per la gestione e il monitoraggio.
                                         </p>
                                         </div>
+                                        <div className="servizi-card-description">
+                                        <p>MEDINET ha sviluppato soluzioni IoT, tra cui il sistema S.A.C.A.P. per il monitoraggio delle stazioni radio base e un’applicazione per il controllo dell’utilizzo di dispositivi di protezione individuale (DPI) tramite smartphone.</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -249,6 +322,9 @@ const Home = () => {
                                         Infrastrutture intelligenti per città sostenibili.
                                         </p>
                                         </div>
+                                        <div className="servizi-card-description">
+                                        <p>MEDINET progetta soluzioni di tele gestione per la pubblica illuminazione, parcheggi a pagamento e reti wireless, con l’obiettivo di rendere più intelligente la gestione urbana, inclusa la mobilità e le risorse ambientali.</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -274,6 +350,9 @@ const Home = () => {
                                         Reti avanzate per una connettività ultraveloce.
                                         </p>
                                         </div>
+                                        <div className="servizi-card-description">
+                                        <p>MEDINET progetta reti in fibra ottica di giunzione e accesso, utilizzando tecnologie FTTC, FTTS, FTTB, FTTH. Offre anche servizi di progettazione esecutiva e di ottenimento permessi da Enti pubblici.</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -284,97 +363,113 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-{/* FINE SEZIONE "CHI SIAMO" */}
+{/* FINE SEZIONE "SERVIZI" */}
 
 
-{/* SEZIONE CONTATTI CON LE CARD ORIZZONTALI */}
-<div id="contatti" className="section">
-                <div className="container">
-                    <center>
-                        <h2>Contatti</h2>
-                    </center>
-                    <hr id="lineaSezioni" />
-                    <div className="row">
-                        {/* Card 1 - Sede Milano */}
-                        <div className="col-12 col-md-6 mb-4">
-                            <div className="card card-horizontal">
-                                <div className="card-body d-flex">
-                                    <div className="card-info">
-                                        <h5 className="card-title">Sede Milano</h5>
-                                        <p className="card-text">Città: Milano</p>
-                                        <p className="card-text">Indirizzo: Via Roma, 123</p>
-                                    </div>
-                                    <div className="map-container">
-                                        <iframe
-                                            title="Sede Milano"
-                                            src="https://maps.app.goo.gl/i41PgVEGoXgJg9ns6"
-                                            width="100%"
-                                            height="250"
-                                            frameBorder="0"
-                                            style={{ border: 0 }}
-                                            allowFullScreen=""
-                                            aria-hidden="false"
-                                            tabIndex="0"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Card 2 - Sede Torino */}
-                        <div className="col-12 col-md-6 mb-4">
-                            <div className="card card-horizontal">
-                                <div className="card-body d-flex">
-                                    <div className="card-info">
-                                        <h5 className="card-title">Sede Torino</h5>
-                                        <p className="card-text">Città: Torino</p>
-                                        <p className="card-text">Indirizzo: Corso Italia, 45</p>
-                                    </div>
-                                    <div className="map-container">
-                                        <iframe
-                                            title="Sede Torino"
-                                            src="https://www.google.com/maps/embed/v1/place?q=Corso+Italia,+45+Torino&key=YOUR_GOOGLE_MAPS_API_KEY"
-                                            width="100%"
-                                            height="250"
-                                            frameBorder="0"
-                                            style={{ border: 0 }}
-                                            allowFullScreen=""
-                                            aria-hidden="false"
-                                            tabIndex="0"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Card 3 - Sede Roma */}
-                        <div className="col-12 col-md-6 mb-4">
-                            <div className="card card-horizontal">
-                                <div className="card-body d-flex">
-                                    <div className="card-info">
-                                        <h5 className="card-title">Sede Roma</h5>
-                                        <p className="card-text">Città: Roma</p>
-                                        <p className="card-text">Indirizzo: Via Nazionale, 10</p>
-                                    </div>
-                                    <div className="map-container">
-                                        <iframe
-                                            title="Sede Roma"
-                                            src="https://www.google.com/maps/embed/v1/place?q=Via+Nazionale,+10+Roma&key=YOUR_GOOGLE_MAPS_API_KEY"
-                                            width="100%"
-                                            height="250"
-                                            frameBorder="0"
-                                            style={{ border: 0 }}
-                                            allowFullScreen=""
-                                            aria-hidden="false"
-                                            tabIndex="0"
-                                        ></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
+
+{/*------------------------------ INIZIO SEZIONE Clienti */}
+<div id="clienti" className="clienti-wrapper">
+  <div className="container">
+    <center>
+      <h2>I nostri clienti</h2>
+    </center>
+    <hr id="lineaSezioni" />
+    <div className="sezioneLoghiClienti">    
+    <div className="row text-center justify-content-center">
+      {[  
+        { logo: LogoTim, name: 'tim' }, 
+        { logo: LogoWind, name: 'wind' }, 
+        { logo: LogoEriccson, name: 'ericcson' }, 
+        { logo: LogoZte, name: 'zte' }, 
+        { logo: LogoVodafone, name: 'vodafone' },  
+        { logo: LogoInwit, name: 'inwit' }, 
+        { logo: LogoCellNex, name: 'cellnex' },
+        { logo: LogoHuawei, name: 'huawei' }
+      ].map((item, index) => (
+        <div key={index} className="col-6 col-md-3 d-flex justify-content-center align-items-center my-3">
+          <img
+            src={item.logo}
+            alt={`Logo ${item.name}`}
+            className={`logo img-fluid ${item.name}`} // Aggiungiamo la classe con il nome originale
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+  </div>
+</div>
+{/*------------------------------ FINE SEZIONE Clienti */}
+
+
+
+
+
+ {/*------------------------------ INIZIO SEZIONE SEDI */}
+ <div id="sedi" className="sedi-wrapper">
+  <div className="container">
+    <center>
+      <h2>Le nostre sedi</h2>
+    </center>
+    <hr id="lineaSezioni" />
+
+    <div className="row justify-content-center">
+      {/* Card unica che occupa 10 colonne */}
+      <div className="col-12 col-md-10 mb-4">
+        <div className="card sedi-card">
+          <div className="card-map-body d-flex">
+            {/* Sezione sinistra - Elenco sedi (2/5 della larghezza) */}
+            <div className="col-12 col-md-5 p-3 sedi-text">
+              <ul className="list-unstyled">
+                {sedeData.map((sede) => (
+                  <li key={sede.id} className="sedi-item mb-3">
+                    <div className="sedi-header">
+                      <h6 className="font-weight-bold">{sede.title}</h6>
                     </div>
-                </div>
+                    <div className="sedi-details">
+                      <p><strong>Indirizzo:</strong> {sede.address}</p>
+                      <p><strong>Località:</strong> {sede.location}</p>
+                    </div>
+                   
+                  </li>
+                ))}
+              </ul>
             </div>
-            {/* FINE SEZIONE CONTATTI */}
-      
+
+            {/* Sezione destra - Mappa con i marker (3/5 della larghezza) */}
+            <div className="col-12 col-md-7 p-0 sedi-mappa">
+              <MapContainer center={position_potenza} zoom={7} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                {sedeData.map((sede) => (
+                    <Marker key={sede.id} position={sede.coordinates} icon={customIcon}>
+                    <Popup className="custom-popup">
+                        <h4>{sede.title}</h4>
+                        <strong>Indirizzo:</strong> {sede.address} <br />
+                        <strong>Località:</strong> {sede.location}
+                    </Popup>
+                    </Marker>
+                ))}
+              </MapContainer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ {/*------------------------------ FINE SEZIONE SEDI */}
+
+
+
+
+
+
+
+
 
 
 
