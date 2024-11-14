@@ -512,14 +512,52 @@ html {
 
 
 .chiSiamoImage {
-  max-width: 100%;  /* Imposta la larghezza massima al 80% del contenitore */
-   /* Mantiene la proporzione originale dell'immagine */
-  border-radius: 10px;  /* Aggiunge angoli arrotondati */
+  max-width: 80%;  /* Imposta la larghezza massima al 80% del contenitore */
+  height: 80%;    /* Mantiene la proporzione originale dell'immagine */
+  border-radius: 15px;  /* Aggiunge angoli arrotondati */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
   transition: transform 0.3s ease; /* Aggiunge una transizione per un effetto al passaggio del mouse */
+  opacity: 0.9;
 }
 
 /* Effetto al passaggio del mouse */
 .chiSiamoImage:hover {
   transform: scale(1.05); /* Aumenta leggermente le dimensioni dell'immagine al passaggio del mouse */
+}
+
+
+/* Stile Colonna Immagine */
+.image-container {
+  text-align: center;
+}
+
+.chiSiamoImage {
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.95;
+}
+
+.chiSiamoImage:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* Stile Colonna Testo */
+.text-content {
+  padding: 20px;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.text-muted {
+  color: #6c757d;
+  line-height: 1.6;
 }

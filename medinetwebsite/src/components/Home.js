@@ -37,7 +37,7 @@ import HomePage2 from '../assets/images/HomePage2.jpg';
 import HomePage3 from '../assets/images/HomePage3.jpg';
 
 //importiamo la foto che va nella sezione Chi siamo
-import ChiSiamo from '../assets/images/chiSiamo.jpg';
+import ChiSiamo from '../assets/images/chiSiamo.png';
 
 
 
@@ -183,27 +183,27 @@ const Home = () => {
 
 <div id="chi-siamo" className="section py-5">
     <div className="container">
-                <center>
-                    <h2>Chi Siamo</h2>
-                </center>
-                <hr id="lineaSezioni" />
+        <div className="text-center mb-4">
+            <h2 className="section-title">Chi Siamo</h2>
+            <hr id="lineaSezioni" />
+        </div>
 
         <div className="row align-items-center">
             {/* Colonna Immagine */}
             <div className="col-lg-6 mb-4 mb-lg-0">
                 <div className="image-container">
-                <img src={ChiSiamo} alt="Chi siamo image" className="chiSiamoImage" />
+                    <img src={ChiSiamo} alt="Chi siamo image" className="chiSiamoImage" />
                 </div>
             </div>
 
             {/* Colonna Testo */}
             <div className="col-lg-6">
                 <div className="text-content">
-                    <h4 className="text font-weight-bold">La Nostra Storia</h4>
+                    <h4 className="sub-title">La Nostra Storia</h4>
                     <p className="text-muted mb-4">
                         MEDINET nasce come realtà specializzata nel settore delle telecomunicazioni, crescendo rapidamente grazie alla competenza e alla capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi esordi, l'azienda ha ampliato la propria offerta, integrando servizi di progettazione e implementazione di infrastrutture per reti mobili e fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle energie rinnovabili.
                     </p>
-                    <h4 className="text font-weight-bold">La Nostra Missione</h4>
+                    <h4 className="sub-title">La Nostra Missione</h4>
                     <p className="text-muted">
                         La missione di MEDINET è fornire soluzioni tecnologiche avanzate e personalizzate che rispondano alle esigenze di connettività e trasformazione digitale dei suoi clienti. Ci impegniamo a garantire eccellenza operativa e sostenibilità, realizzando progetti che uniscono qualità, efficienza e innovazione.
                     </p>
@@ -212,6 +212,7 @@ const Home = () => {
         </div>
     </div>
 </div>
+
 
 
  {/* SEZIONE SERVIZI CON LE CARD */}
@@ -475,10 +476,10 @@ const Home = () => {
             {/* Sezione destra - Mappa con i marker (3/5 della larghezza) */}
             <div className="col-12 col-md-7 p-0 sedi-mappa">
               <MapContainer center={position_potenza} zoom={7} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
+              <TileLayer
+        url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
                 {sedeData.map((sede) => (
                     <Marker key={sede.id} position={sede.coordinates} icon={customIcon}>
                     <Popup className="custom-popup">
