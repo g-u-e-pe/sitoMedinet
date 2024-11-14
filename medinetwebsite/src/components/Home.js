@@ -36,6 +36,10 @@ import HomePage1 from '../assets/images/HomePage1.jpg';
 import HomePage2 from '../assets/images/HomePage2.jpg';
 import HomePage3 from '../assets/images/HomePage3.jpg';
 
+//importiamo la foto che va nella sezione Chi siamo
+import ChiSiamo from '../assets/images/chiSiamo.jpg';
+
+
 
 
 
@@ -136,24 +140,24 @@ const Home = () => {
     <div className="carousel-inner">
         <div className="carousel-item active">
             <img src={HomePage1} className="d-block w-100" alt="First slide" />
-            <div className="carousel-caption  d-md-block">
-                <h5>Primo Scatto</h5>
-                <p>Una descrizione rappresentativa per la prima immagine.</p>
-            </div>
+            <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
+            <h5 className="text-center">Connettività e Innovazione nelle Reti Mobili</h5>
+            <p className="text-center">Siamo i partner per l’evoluzione delle telecomunicazioni</p>
+        </div>
         </div>
         <div className="carousel-item">
-            <img src={HomePage2} className="d-block w-100" alt="Second slide" />
-            <div className="carousel-caption d-md-block">
-                <h5>Secondo Scatto</h5>
-                <p>Una descrizione rappresentativa per la seconda immagine.</p>
-            </div>
+            <img src={HomePage2} className="d-block w-100" alt="Second slide"   />
+            <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
+            <h5 className="text-center">Verso Città Intelligenti e Connesse</h5>
+            <p className="text-center"> Tecnologia IoT per trasformare l’ambiente urbano</p>
+        </div>
         </div>
         <div className="carousel-item">
             <img src={HomePage3} className="d-block w-100" alt="Third slide" />
-            <div className="carousel-caption  d-md-block">
-                <h5>Terzo Scatto</h5>
-                <p>Una descrizione rappresentativa per la terza immagine.</p>
-            </div>
+            <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
+            <h5 className="text-center">Potenziamo il Futuro con Reti a Banda Ultra Larga</h5>
+            <p className="text-center">Soluzioni avanzate per il digitale di domani</p>
+        </div>
         </div>
     </div>
     <button
@@ -177,6 +181,37 @@ const Home = () => {
 </div>
 {/* FINE SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI */}
 
+<div id="chi-siamo" className="section py-5">
+    <div className="container">
+                <center>
+                    <h2>Chi Siamo</h2>
+                </center>
+                <hr id="lineaSezioni" />
+
+        <div className="row align-items-center">
+            {/* Colonna Immagine */}
+            <div className="col-lg-6 mb-4 mb-lg-0">
+                <div className="image-container">
+                <img src={ChiSiamo} alt="Chi siamo image" className="chiSiamoImage" />
+                </div>
+            </div>
+
+            {/* Colonna Testo */}
+            <div className="col-lg-6">
+                <div className="text-content">
+                    <h4 className="text font-weight-bold">La Nostra Storia</h4>
+                    <p className="text-muted mb-4">
+                        MEDINET nasce come realtà specializzata nel settore delle telecomunicazioni, crescendo rapidamente grazie alla competenza e alla capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi esordi, l'azienda ha ampliato la propria offerta, integrando servizi di progettazione e implementazione di infrastrutture per reti mobili e fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle energie rinnovabili.
+                    </p>
+                    <h4 className="text font-weight-bold">La Nostra Missione</h4>
+                    <p className="text-muted">
+                        La missione di MEDINET è fornire soluzioni tecnologiche avanzate e personalizzate che rispondano alle esigenze di connettività e trasformazione digitale dei suoi clienti. Ci impegniamo a garantire eccellenza operativa e sostenibilità, realizzando progetti che uniscono qualità, efficienza e innovazione.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
  {/* SEZIONE SERVIZI CON LE CARD */}

@@ -35,22 +35,23 @@ html {
   height: 100%;
   object-fit: cover;
   /*  filter: grayscale(100%) brightness(1.2) sepia(1) hue-rotate(180deg) saturate(2);  */
+  opacity: 0.9;
 }
 
 .carousel-caption {
-    position: absolute;
-    top: 70%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Pannello nero semitrasparente */
-    padding: 20px;
-    border-radius: 7px;
-    color: #ffffff !important; /* Assicura che il testo sia leggibile */
-    max-width: 70%; /* Limita la larghezza per evitare che occupi tutto lo schermo */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);   
-    text-align: center;
-    font-size: 1.1rem;
-    
+  position: absolute;
+  top: 70%; /* Posiziona la didascalia più in basso */
+  transform: translateY(-50%); /* Centra la didascalia verticalmente */
+  background-color: rgba(0, 0, 0, 0.6); /* Pannello nero semitrasparente con maggiore opacità */
+  padding: 30px; /* Maggiore spazio per migliorare la leggibilità */
+  border-radius: 10px; /* Rende i bordi più arrotondati */
+  color: #ffffff !important; /* Assicura che il testo sia leggibile */
+  max-width: 70%; /* Limita la larghezza per evitare che occupi troppo spazio */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Ombra più morbida e leggera */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Ombra più forte per il testo */
+  text-align: center;
+  font-size: 1.2rem; /* Aumenta la dimensione del font per migliorare la leggibilità */
+  line-height: 1.5; /* Aumenta l'altezza della linea per una lettura più confortevole */
 }
 
 .carousel-caption:hover {
@@ -131,7 +132,6 @@ html {
 
 
 /*------------------------------INIZIO CSS #SERVIZI---------------------------------------------------*/
-
 /*css per le icone nelle card della sezione servizi*/
 #servizi .icon {
   width: 90px; /* Dimensione dell'icona */
@@ -246,6 +246,45 @@ html {
     font-size: 1.1rem; /* Dimensione titolo leggermente ridotta su mobile */
   }
 }
+
+
+
+
+
+/* Nascondere la descrizione inizialmente */
+.servizi-card-description {
+  display: none; /* La descrizione è nascosta per default */
+  opacity: 0;
+  transform: translateY(10px); /* La descrizione si sposterà leggermente in basso quando appare */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transizione fluida per l'opacità e il movimento */
+  margin-top: 10px; /* Distanza tra il contenuto e la descrizione */
+  color: #555; /* Colore del testo per la descrizione, più morbido */
+  font-size: 14px; /* Font più grande per una migliore leggibilità */
+  line-height: 1.6; /* Maggiore spaziatura tra le righe per migliorare la leggibilità */
+  text-align: center; /* Centrato il testo */
+  padding: 0 20px; /* Aggiunta di un po' di spazio laterale per non toccare i bordi */
+  font-weight: 400; /* Peso del font normale */
+}
+
+/* Quando si passa sopra la card */
+#servizi .card:hover .servizi-card-description {
+  display: block;
+  opacity: 1; /* La descrizione diventa visibile */
+  transform: translateY(0); /* La descrizione si sposta nella posizione finale */
+}
+
+/* Leggera animazione e ombra per la card */
+#servizi .card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animazione fluida per il sollevamento della card e la ombra */
+}
+
+#servizi .card:hover {
+  transform: translateY(-10px); /* Leggero sollevamento della card */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombra più prominente */
+}
+
+
+
 
 /*--------------FINE CSS SEZIONE #SERVIZI ------------------------------------*/
 
@@ -472,37 +511,15 @@ html {
 
 
 
-
-/* Nascondere la descrizione inizialmente */
-.servizi-card-description {
-  display: none; /* La descrizione è nascosta per default */
-  opacity: 0;
-  transform: translateY(10px); /* La descrizione si sposterà leggermente in basso quando appare */
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transizione fluida per l'opacità e il movimento */
-  margin-top: 15px; /* Distanza tra il contenuto e la descrizione */
-  color: #555; /* Colore del testo per la descrizione, più morbido */
-  font-size: 16px; /* Font più grande per una migliore leggibilità */
-  line-height: 1.6; /* Maggiore spaziatura tra le righe per migliorare la leggibilità */
-  text-align: center; /* Centrato il testo */
-  padding: 0 20px; /* Aggiunta di un po' di spazio laterale per non toccare i bordi */
-  font-weight: 400; /* Peso del font normale */
+.chiSiamoImage {
+  max-width: 100%;  /* Imposta la larghezza massima al 80% del contenitore */
+   /* Mantiene la proporzione originale dell'immagine */
+  border-radius: 10px;  /* Aggiunge angoli arrotondati */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
+  transition: transform 0.3s ease; /* Aggiunge una transizione per un effetto al passaggio del mouse */
 }
 
-/* Quando si passa sopra la card */
-#servizi .card:hover .servizi-card-description {
-  display: block;
-  opacity: 1; /* La descrizione diventa visibile */
-  transform: translateY(0); /* La descrizione si sposta nella posizione finale */
+/* Effetto al passaggio del mouse */
+.chiSiamoImage:hover {
+  transform: scale(1.05); /* Aumenta leggermente le dimensioni dell'immagine al passaggio del mouse */
 }
-
-/* Leggera animazione e ombra per la card */
-#servizi .card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animazione fluida per il sollevamento della card e la ombra */
-}
-
-#servizi .card:hover {
-  transform: translateY(-10px); /* Leggero sollevamento della card */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombra più prominente */
-}
-
-
