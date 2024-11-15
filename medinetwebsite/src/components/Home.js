@@ -474,6 +474,7 @@ const Home = () => {
             </div>
 
             {/* Sezione destra - Mappa con i marker (3/5 della larghezza) */}
+              {/* sito mappe preview https://leaflet-extras.github.io/leaflet-providers/preview/ */}
             <div className="col-12 col-md-7 p-0 sedi-mappa">
               <MapContainer center={position_potenza} zoom={7} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
               <TileLayer
