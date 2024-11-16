@@ -12,7 +12,9 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Sitemark from './SitemarkIcon';
-import ColorModeIconDropdown from '../../shared-theme/ColorModeIconDropdown';
+import SvgIcon from '@mui/material/SvgIcon';
+import MediNet from '../../public/Medinet.png'
+
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
@@ -22,11 +24,9 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     backdropFilter: 'blur(24px)',
     border: '1px solid',
     borderColor: (theme.vars || theme).palette.divider,
-    backgroundColor: theme.vars
-      ? `rgba(${theme.vars.palette.background.defaultChannel} / 0.4)`
-      : alpha(theme.palette.background.default, 0.4),
+    backgroundColor: alpha('#ffffff', 0.8),
     boxShadow: (theme.vars || theme).shadows[1],
-    padding: '8px 12px',
+    padding: '0px 12px',
   }));
 
 function Navbar2() {
@@ -49,13 +49,23 @@ function Navbar2() {
     >
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-            <Sitemark />
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Button variant="text" color="info" size="small">
+          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0}}>
+            <Box sx={{display: 'flex', alignItems: 'center', mr: 2  }}>
+              <img
+                src={MediNet}
+                alt="logo"
+                style={{
+                width: 'auto',   
+                height: '40px',     
+                objectFit: 'contain' 
+                }}
+              />
+            </Box>
+            {/*<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+              <Button variant="text" color="info" size="large">
                 Features
               </Button>
-              <Button variant="text" color="info" size="small">
+              <Button variant="text" color="info" size="large">
                 Testimonials
               </Button>
               <Button variant="text" color="info" size="small">
@@ -70,25 +80,42 @@ function Navbar2() {
               <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                 Blog
               </Button>
+            </Box>*/}
+            <Box sx={{
+              ml: 'auto', // Spinge i bottoni a destra
+              display: { xs: 'none', md: 'flex' },
+              alignItems: 'center',
+              gap: 1, // Spaziatura tra i bottoni
+            }}>
+            {['Features', 'Testimonials', 'Highlights', 'Pricing', 'FAQ', 'Blog'].map(
+            (label, index) => (
+            <Button
+              key={index}
+              variant="text"
+              size="large"
+              sx={{
+              textTransform: 'none', // Evita l'uppercase
+              fontSize: '19px', // Cambia dimensione del font
+              fontFamily: 'Roboto, sans-serif', // Font
+              fontWeight: 'bold',              // Grassetto
+              color: '#174081', // Colore del testo
+              bgcolor: 'transparent', // Sfondo trasparente
+              border: '1px solid transparent', // Evita bordi visibili
+              transition: 'all 0.3s ease-in-out', // Transizione per l'effetto hover
+              '&:hover': {
+                color: '#fff', // Colore del testo invertito
+                bgcolor: '#174081', // Sfondo invertito
+                borderRadius: '20px', // Arrotondamento maggiore durante l'hover
+              },
+              }}
+            >
+              {label}
+            </Button>
+            )
+            )}
             </Box>
           </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              gap: 1,
-              alignItems: 'center',
-            }}
-          >
-            <Button color="primary" variant="text" size="small">
-              Sign in
-            </Button>
-            <Button color="primary" variant="contained" size="small">
-              Sign up
-            </Button>
-            <ColorModeIconDropdown />
-          </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
-            <ColorModeIconDropdown size="medium" />
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
@@ -120,17 +147,6 @@ function Navbar2() {
                 <MenuItem>Pricing</MenuItem>
                 <MenuItem>FAQ</MenuItem>
                 <MenuItem>Blog</MenuItem>
-                <Divider sx={{ my: 3 }} />
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
-                  </Button>
-                </MenuItem>
               </Box>
             </Drawer>
           </Box>
