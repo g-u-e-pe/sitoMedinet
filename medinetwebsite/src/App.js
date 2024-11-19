@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <NavbarDef scrolled= {scrolled}/>
-      <div className="content" style={{ flex: '1', paddingTop: "150px" }}>
+      <div className="content" style={{ flex: '1', paddingTop: "150px"}}>
         <Home /> {/* Inserisci il componente Home qui */}
       </div>
       <Footer /> {/* Il footer dovrebbe essere qui per assicurarsi che venga visualizzato alla fine */}
