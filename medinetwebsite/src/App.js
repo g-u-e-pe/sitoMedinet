@@ -1,6 +1,4 @@
 import React , {useState, useEffect}from 'react';
-import Navbar from './components/Navbar';
-import Navbar2 from './components/Navbar2';
 import NavbarDef from './components/NavbarDef';
 import Home from './components/Home'; // Assicurati di avere questo import corretto
 import Footer from './components/Footer';
