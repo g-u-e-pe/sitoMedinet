@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import '../index.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 
 //importiamo librerie per la mappa -> sezione "le nostre sedi"
@@ -43,7 +45,7 @@ import ChiSiamo from '../assets/images/chiSiamo.png';
 
 
 
-
+AOS.init();// Inizializzazione di AOS libreria per le animazioni
 const Home = () => {
     //position_potenza corrisponde alle coordinate di potenza che vengono visualizzate nella mappa (utili perchè rappresentano il centro tra campania e basilicata)
     const position_potenza= [40.646040469819354, 15.809515347484554]
@@ -198,7 +200,7 @@ const Home = () => {
             </div>
 
             {/* Colonna Testo */}
-            <div className="col-lg-6">
+            <div className="col-lg-6" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
                 <div className="text-content">
                     <h4 className="sub-title">La Nostra Storia</h4>
                     <p className="text-muted mb-4">
@@ -239,7 +241,7 @@ const Home = () => {
         <div className="card-wrapper card-space">
           <div className="card card-bg card-big">
             <div className="card-body">
-              <div className="top-icon">
+            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
                 <center>
                   <img src={TelefoniaMobile} alt="Antenna Icon" className="icon" />
                 </center>
@@ -270,7 +272,7 @@ const Home = () => {
         <div className="card-wrapper card-space">
           <div className="card card-bg card-big">
             <div className="card-body">
-              <div className="top-icon">
+            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
                 <center>
                   <img src={TelefoniaFissa} alt="Antenna Icon" className="icon" />
                 </center>
@@ -301,7 +303,7 @@ const Home = () => {
         <div className="card-wrapper card-space">
           <div className="card card-bg card-big">
             <div className="card-body">
-              <div className="top-icon">
+            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
                 <center>
                   <img src={EnergiaEMobilita} alt="Antenna Icon" className="icon" />
                 </center>
@@ -330,7 +332,7 @@ const Home = () => {
         <div className="card-wrapper card-space">
           <div className="card card-bg card-big">
             <div className="card-body">
-              <div className="top-icon">
+            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
                 <center>
                   <img src={IotIndustry} alt="Antenna Icon" className="icon" />
                 </center>
@@ -359,7 +361,7 @@ const Home = () => {
         <div className="card-wrapper card-space">
           <div className="card card-bg card-big">
             <div className="card-body">
-              <div className="top-icon">
+            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
                 <center>
                   <img src={SmartCity} alt="Antenna Icon" className="icon" />
                 </center>
@@ -388,7 +390,7 @@ const Home = () => {
         <div className="card-wrapper card-space">
           <div className="card card-bg card-big">
             <div className="card-body">
-              <div className="top-icon">
+            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
                 <center>
                   <img src={NextGenerationNetworks} alt="Antenna Icon" className="icon" />
                 </center>
@@ -430,23 +432,25 @@ const Home = () => {
     </center>
     <hr id="lineaSezioni" />
     <div className="sezioneLoghiClienti">    
-    <div className="row text-center justify-content-center">
+    <div className="row text-center justify-content-center"  data-aos="fade-up"  data-aos-duration="2000">
       {[  
-        { logo: LogoTim, name: 'tim' }, 
-        { logo: LogoWind, name: 'wind' }, 
-        { logo: LogoEriccson, name: 'ericcson' }, 
-        { logo: LogoZte, name: 'zte' }, 
-        { logo: LogoVodafone, name: 'vodafone' },  
-        { logo: LogoInwit, name: 'inwit' }, 
-        { logo: LogoCellNex, name: 'cellnex' },
-        { logo: LogoHuawei, name: 'huawei' }
+        { logo: LogoTim, name: 'tim', url: 'https://www.tim.it'  }, 
+        { logo: LogoWind, name: 'wind', url: 'https://www.windtre.it'  }, 
+        { logo: LogoEriccson, name: 'ericcson', url: 'https://www.ericsson.it'  }, 
+        { logo: LogoZte, name: 'zte', url: 'https://www.zteitalia.it/' }, 
+        { logo: LogoVodafone, name: 'vodafone', url: 'https://www.privati.vodafone.it'  },  
+        { logo: LogoInwit, name: 'inwit', url: 'https://www.inwit.it/it'  }, 
+        { logo: LogoCellNex, name: 'cellnex', url: 'https://www.cellnex.com/it-it/'  },
+        { logo: LogoHuawei, name: 'huawei', url: 'https://consumer.huawei.com/it/' }
       ].map((item, index) => (
         <div key={index} className="col-6 col-md-3 d-flex justify-content-center align-items-center my-3">
+          <a href={item.url} target="_blank" rel="noopener noreferrer">
           <img
             src={item.logo}
             alt={`Logo ${item.name}`}
             className={`logo img-fluid ${item.name}`} // Aggiungiamo la classe con il nome originale
           />
+          </a>
         </div>
       ))}
     </div>
