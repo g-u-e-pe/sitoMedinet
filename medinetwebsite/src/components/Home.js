@@ -186,33 +186,47 @@ const Home = () => {
 
 <div id="chi-siamo" className="section py-5">
     <div className="container">
-        <div className="text-center mb-4">
+        {/*<div className="text-center mb-4">
             <h2 className="section-title">Chi Siamo</h2>
             <hr id="lineaSezioni" />
-        </div>
+        </div>*/}
 
-        <div className="row align-items-center">
-            {/* Colonna Immagine */}
-            <div className="col-lg-6 mb-4 mb-lg-0">
-                <div className="image-container">
-                    <img src={ChiSiamo} alt="Chi siamo image" className="chiSiamoImage" />
-                </div>
-            </div>
+<div className="row align-items-center" style={{padding: '50px 0' }}>
+  {/* Colonna Immagine */}
+  <div className="col-lg-6 mb-4 mb-lg-0">
+    <div className="image-container" style={{ position: 'relative', overflow: 'hidden', borderRadius: '15px', boxShadow: '0px 10px 20px rgba(0,0,0,0.1)' }}>
+      <img 
+        src={ChiSiamo } 
+        alt="Chi siamo image" 
+        className="chiSiamoImage" 
+        style={{ width: '100%', transition: 'transform 0.3s ease-in-out' }} 
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      />
+    </div>
+  </div>
 
-            {/* Colonna Testo */}
-            <div className="col-lg-6" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                <div className="text-content">
-                    <h4 className="sub-title">La Nostra Storia</h4>
-                    <p className="text-muted mb-4">
-                        MEDINET nasce come realtà specializzata nel settore delle telecomunicazioni, crescendo rapidamente grazie alla competenza e alla capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi esordi, l'azienda ha ampliato la propria offerta, integrando servizi di progettazione e implementazione di infrastrutture per reti mobili e fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle energie rinnovabili.
-                    </p>
-                    <h4 className="sub-title">La Nostra Missione</h4>
-                    <p className="text-muted">
-                        La missione di MEDINET è fornire soluzioni tecnologiche avanzate e personalizzate che rispondano alle esigenze di connettività e trasformazione digitale dei suoi clienti. Ci impegniamo a garantire eccellenza operativa e sostenibilità, realizzando progetti che uniscono qualità, efficienza e innovazione.
-                    </p>
-                </div>
-            </div>
-        </div>
+  {/* Colonna Testo */}
+  <div className="col-lg-6">
+    <div className="text-content" style={{ color: '#333' }}>
+      {/* Animazione e Titoli */}
+      <div data-aos="fade-up" data-aos-duration="1000" style={{ marginBottom: '30px' }}>
+        <h2 style={{ color: '#174081', fontWeight: 'bold', marginBottom: '20px' }}>La Nostra Storia</h2>
+        <p style={{ lineHeight: '1.8', color: '#555' }}>
+          MEDINET nasce come realtà specializzata nel settore delle telecomunicazioni, crescendo rapidamente grazie alla competenza e alla capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi esordi, l'azienda ha ampliato la propria offerta, integrando servizi di progettazione e implementazione di infrastrutture per reti mobili e fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle energie rinnovabili.
+        </p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <h2 style={{ color: '#174081', fontWeight: 'bold', marginBottom: '20px' }}>La Nostra Missione</h2>
+        <p style={{ lineHeight: '1.8', color: '#555' }}>
+          La missione di MEDINET è fornire soluzioni tecnologiche avanzate e personalizzate che rispondano alle esigenze di connettività e trasformazione digitale dei suoi clienti. Ci impegniamo a garantire eccellenza operativa e sostenibilità, realizzando progetti che uniscono qualità, efficienza e innovazione.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
 </div>
 
