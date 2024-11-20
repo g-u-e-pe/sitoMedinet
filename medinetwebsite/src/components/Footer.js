@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Assicurati di importare Bootst
 
 const Footer = () => {
     return (
-        <footer className="text-center bg-body-tertiary">
+        <footer className="text-center bg-body-tertiary" id ="contatti">
             {/* Grid container */}
             <div className="container pt-4">
                 {/* Section: Social media */}

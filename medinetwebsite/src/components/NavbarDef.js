@@ -14,7 +14,6 @@ import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
-import ColorModeIconDropdown from './ColorModeIconDropdown';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Button from '@mui/material/Button';
 
@@ -22,6 +21,7 @@ function NavbarDef({scrolled}) {
     const [activeTab, setActiveTab] = useState(0);
     const [progress, setProgress] = useState(50); // Stato per il progresso
     const [open, setOpen] = React.useState(false);
+    const sectionIds = ["home", "chi-siamo", "servizi", "clienti", "sedi", "contatti"];
     const isSmallScreen = useMediaQuery("(max-width: 600px)"); // Verifica se lo schermo è xs o sm
 
   useEffect(() => {
@@ -50,14 +50,61 @@ function NavbarDef({scrolled}) {
       window.removeEventListener("scroll", handleScroll); // Rimuove l'evento scroll per evitare memory leak
     };
   }, [scrolled, isSmallScreen]);
-  
 
-    const handleChange = (event, newValue) => {
-        setActiveTab(newValue);
-      };
-      const toggleDrawer = (newOpen) => () => {
-        setOpen(newOpen);
-      };
+  useEffect(() => {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionIds.indexOf(entry.target.id);
+            if (index !== -1) setActiveTab(index); // Attiva la tab corrispondente
+          }
+        });
+      },
+      { root: null, threshold: 0.5 }
+    );
+  
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) sectionObserver.observe(section);
+    });
+  
+    const footer = document.getElementById("contatti"); // Assicurati che il footer abbia l'id "contatti"
+    const footerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(sectionIds.length - 1); // Attiva la tab per il footer (Contatti)
+          }
+        });
+      },
+      { root: null, threshold: 0.1 } // Ridotto a 10% per il footer
+    );
+  
+    if (footer) footerObserver.observe(footer);
+  
+    return () => {
+      sectionObserver.disconnect();
+      footerObserver.disconnect(); // Pulizia di entrambi gli observer
+    };
+  }, [sectionIds]);
+  
+  // Funzione per scrollare alla sezione corrispondente
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+    setOpen(false)
+    const section = document.getElementById(sectionIds[index]);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth", // Aggiunge un'animazione fluida
+        block: "start", // Allinea la sezione alla parte superiore della finestra
+      });
+    }
+  };
+  
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
 
     
   return (
@@ -80,7 +127,7 @@ function NavbarDef({scrolled}) {
         </Box>
         <Tabs
           value={activeTab}
-          onChange={handleChange}
+          onChange={(event, newValue) => handleTabClick(newValue)}
           textColor="inherit"
           TabIndicatorProps={{
             style: {
@@ -140,61 +187,94 @@ function NavbarDef({scrolled}) {
             )
           )}
         </Tabs>
-        <Box sx={{ display: { sm:'flex',xs: 'flex', md: 'none',lg:"none" }, alignItems: 'center',gap: 1}}>
-            {scrolled?
-            <img src={MediNetOmbra} alt="logo" style={{ width: 'auto',height: '110px',objectFit: 'cover'}}/>
-            :<img src={MediNet} alt="logo" style={{width: '110px', height: '110px', objectFit: 'cover', }}/>
-            }
-            {!scrolled&& <img src= {text} alt="logo" style={{width: 'auto', height: '40px', objectFit: 'contain'}}/>
-          }
-        </Box>
-        <Box sx={{ display: { xs: 'flex', sm:'flex', md: 'none',lg:"none" }, gap: 1 }}>
-            <ColorModeIconDropdown size="medium" />
-            <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-              <MenuIcon />
-            </IconButton>
-            <Drawer
-              anchor="top"
-              open={open}
-              onClose={toggleDrawer(false)}
-              PaperProps={{
-                sx: {
-                  top: 'var(--template-frame-height, 0px)',
-                },
-              }}
-            >
-              <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                  }}
-                >
-                  <IconButton onClick={toggleDrawer(false)}>
-                    <CloseRoundedIcon />
-                  </IconButton>
-                </Box>
+        <Box
+          sx={{
+          display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none' }, // Gestisce visibilità in base alla dimensione dello schermo
+          alignItems: 'center',
+          gap: 1,
+          justifyContent: 'center', // Allinea gli elementi orizzontalmente nel centro
+          flexDirection: 'row', // Dispone le immagini orizzontalmente
+          }}
+        >
+          {scrolled ? (
+          <img
+            src={MediNetOmbra}
+            alt="logo"
+            style={{
+            width: 'auto',
+            height: '110px',
+            objectFit: 'cover', // Rende l'immagine proporzionata e copre il contenitore
+            maxWidth: '100%', // Impedisce che l'immagine esca dal contenitore
+            }}
+          />
+          ) : (
+          <img
+            src={MediNet}
+            alt="logo"
+            style={{
+            width: '110px',
+            height: 'auto', // Imposta l'altezza automatica per mantenere le proporzioni
+            objectFit: 'cover',
+            maxWidth: '100%', // Limita la larghezza massima
+            }}
+          />
+          )}
 
-                <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
-                <MenuItem>Highlights</MenuItem>
-                <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
-                <MenuItem>Blog</MenuItem>
-                <Divider sx={{ my: 3 }} />
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
-                  </Button>
-                </MenuItem>
-              </Box>
-            </Drawer>
+          {!scrolled && (
+          <img
+            src={text}
+            alt="logo"
+            style={{
+            width: 'auto',
+            height: '40px',
+            objectFit: 'contain', // Mantiene le proporzioni dell'immagine
+            maxWidth: '100%', // Limita la larghezza dell'immagine
+            }}
+          />
+          )}
+        </Box>
+        <Box sx={{ display: { xs: "flex", sm: "flex", md: "none", lg: "none" }, gap: 0 }}>
+          <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
+            <MenuIcon />
+          </IconButton>
+          <Drawer
+            anchor="right" // Cambia da 'top' a 'right' per il menu a destra
+            open={open}
+            onClose={toggleDrawer(false)}
+            PaperProps={{
+            sx: {
+            top: "var(--template-frame-height, 0px)",
+            width: "250px", // Puoi aggiustare la larghezza
+            backgroundColor: "rgb(228, 241, 251)", // Colore di sfondo
+            },
+            }}
+          >
+          <Box sx={{ p: 2 }}>
+            <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+              <IconButton onClick={toggleDrawer(false)}>
+                <CloseRoundedIcon />
+              </IconButton>
+            </Box>
+
+          {/* Menu Items con logica per andare alla sezione */}
+            {["Home", "Chi siamo", "Servizi", "Clienti", "Sedi", "Contatti"].map((label, index) => (
+            <MenuItem
+              key={index}
+              sx={{
+              color: "#174081", // Cambia il colore delle scritte
+              fontWeight: "bold",
+              "&:hover": {
+              color: "#5A9BE5", // Colore al passaggio del mouse
+              },
+              }}
+              onClick={() => handleTabClick(index)} // Usa handleTabClick per scorrere alla sezione
+            >
+              {label}
+            </MenuItem>
+          ))}
           </Box>
+          </Drawer>
+        </Box>
       </Toolbar>
     </AppBar>
 

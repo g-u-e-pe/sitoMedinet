@@ -30,6 +30,7 @@ import LogoEriccson from '../assets/logos/ericcson.png';
 import LogoHuawei from '../assets/logos/huawei.png';
 import LogoInwit from '../assets/logos/inwit.png';
 import LogoCellNex from '../assets/logos/cellnex.png';
+import Service from '../../public/service.jpg'
 
 //importiamo le foto della homepage che andranno nel carousel 
 import HomePage1 from '../assets/images/HomePage1.jpg';
@@ -216,189 +217,205 @@ const Home = () => {
 
 
  {/* SEZIONE SERVIZI CON LE CARD */}
- <div id="servizi" className="section">
-                <div className="container">
-                    <center>
-                        <h2>Servizi</h2>
-                    </center>
-                    <hr id="lineaSezioni" />
-                    <div className="row">
-                        {/* Card 1 */}
+ <div 
+  id="servizi" 
+  className="section" 
+  style={{
+    backgroundImage: `url(${Service})`,  // Sostituisci con il tuo URL immagine
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundAttachment: "fixed",  // Effetto Parallax
+    backgroundRepeat: "no-repeat",
+    padding: "50px 0", // Distanza tra il bordo e il contenuto
+    color: "#fff", // Colore del testo per renderlo visibile sull'immagine
+  }}
+>
+  <div className="container">
+    <h1 style={{ textAlign: "left" }}>SERVIZI</h1> {/* Allinea a sinistra */}
+    
+    <div className="row">
+      {/* Card 1: Telefonia Mobile */}
+      <div className="col-12 col-md-6 col-lg-4">
+        <div className="card-wrapper card-space">
+          <div className="card card-bg card-big">
+            <div className="card-body">
+              <div className="top-icon">
+                <center>
+                  <img src={TelefoniaMobile} alt="Antenna Icon" className="icon" />
+                </center>
+              </div>
+              <h3 className="card-title h5">
+                <center>TELEFONIA MOBILE</center>
+              </h3>
+              <div className="card-content">
+                <p className="card-text font-serif">
+                  Infrastrutture e soluzioni per le reti mobili.
+                </p>
+              </div>
 
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <div className="card-wrapper card-space">
-                                <div className="card card-bg card-big">
-                                    <div className="card-body">
-                                        <div className="top-icon">
-                                            <center>
-                                                <img src={TelefoniaMobile} alt="Antenna Icon" className="icon" />
-                                            </center>
-                                        </div>
-                                        <h3 className="card-title h5">
-                                            <center>TELEFONIA MOBILE</center>
-                                        </h3>
-                                        <hr id="card-divider"/>
-
-                                        <div class="card-content">
-                                        <p className="card-text font-serif">
-                                            Infrastrutture e soluzioni per le reti mobili.
-                                        </p>
-                                        </div>
-                                        
-                                        <div className="servizi-card-description">
-                                        <p>MEDINET si occupa di progettazione, installazione e ottimizzazione delle reti di telefonia mobile, inclusi sistemi radio (2G, 3G, 4G, 5G) e stazioni radio base. Gestisce anche decommissioning, migrazione tecnologica, e rinnovo di permessi e contratti per le infrastrutture mobili.</p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <div className="card-wrapper card-space">
-                                <div className="card card-bg card-big">
-                                    <div className="card-body">
-                                        <div className="top-icon">
-                                            <center>
-                                                <img src={TelefoniaFissa} alt="Antenna Icon" className="icon" />
-                                            </center>
-                                        </div>
-                                        <h3 className="card-title h5">
-                                            <center>TELEFONIA FISSA</center>
-                                        </h3>
-                                        <hr id="card-divider"/>
-
-                                        <div class="card-content">
-                                        <p className="card-text font-serif">
-                                        Servizi di comunicazione fissa ad alta qualità.
-                                        </p>
-                                        </div>
-                                        
-                                        <div className="servizi-card-description">
-                                        <p>MEDINET esegue attività di Installation & Commissioning (I&C) su apparati di accesso fisso (come ISAM, MSAN, ONUcab, OLT) e di trasporto (SDH, WDM, DWDM). Si occupa anche di lavori su centrali Telecom, come la compattazione ATM e il decommissioning PSTN.</p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <div className="card-wrapper card-space">
-                                <div className="card card-bg card-big">
-                                    <div className="card-body">
-                                        <div className="top-icon">
-                                            <center>
-                                                <img src={EnergiaEMobilita} alt="Antenna Icon" className="icon" />
-                                            </center>
-                                        </div>
-                                        <h3 className="card-title h5">
-                                            <center>ENERGIA E MOBILITÀ</center>
-                                        </h3>
-                                        <hr id="card-divider"/>
-
-                                        <div class="card-content">
-                                        <p className="card-text font-serif">
-                                        Soluzioni energetiche e trasporti sostenibili.
-                                        </p>
-                                        </div>
-                                        <div className="servizi-card-description">
-                                        <p>MEDINET si occupa della progettazione di reti elettriche, impianti da fonti di energia alternative e colonnine di ricarica per auto elettriche.</p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <div className="card-wrapper card-space">
-                                <div className="card card-bg card-big">
-                                    <div className="card-body">
-                                        <div className="top-icon">
-                                            <center>
-                                                <img src={IotIndustry} alt="Antenna Icon" className="icon" />
-                                            </center>
-                                        </div>
-                                        <h3 className="card-title h5">
-                                            <center>IoT IN AMBITO TECLO E INDUSTRY</center>
-                                        </h3>
-                                        <hr id="card-divider"/>
-
-                                        <div class="card-content">
-                                        <p className="card-text font-serif">
-                                        Tecnologie IoT per la gestione e il monitoraggio.
-                                        </p>
-                                        </div>
-                                        <div className="servizi-card-description">
-                                        <p>MEDINET ha sviluppato soluzioni IoT, tra cui il sistema S.A.C.A.P. per il monitoraggio delle stazioni radio base e un’applicazione per il controllo dell’utilizzo di dispositivi di protezione individuale (DPI) tramite smartphone.</p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <div className="card-wrapper card-space">
-                                <div className="card card-bg card-big">
-                                    <div className="card-body">
-                                        <div className="top-icon">
-                                            <center>
-                                                <img src={SmartCity} alt="Antenna Icon" className="icon" />
-                                            </center>
-                                        </div>
-                                        <h3 className="card-title h5">
-                                            <center>SMART CITY E RIGENERAZIONE URBANA</center>
-                                        </h3>
-                                        <hr id="card-divider"/>
-
-                                        <div class="card-content">
-                                        <p className="card-text font-serif">
-                                        Infrastrutture intelligenti per città sostenibili.
-                                        </p>
-                                        </div>
-                                        <div className="servizi-card-description">
-                                        <p>MEDINET progetta soluzioni di tele gestione per la pubblica illuminazione, parcheggi a pagamento e reti wireless, con l’obiettivo di rendere più intelligente la gestione urbana, inclusa la mobilità e le risorse ambientali.</p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <div className="card-wrapper card-space">
-                                <div className="card card-bg card-big">
-                                    <div className="card-body">
-                                        <div className="top-icon">
-                                            <center>
-                                                <img src={NextGenerationNetworks} alt="Antenna Icon" className="icon" />
-                                            </center>
-                                        </div>
-                                        <h3 className="card-title h5">
-                                            <center>NEXT GENERATION NETWORKS</center>
-                                        </h3>
-                                        <hr id="card-divider"/>
-
-                                        <div class="card-content">
-                                        <p className="card-text font-serif">
-                                        Reti avanzate per una connettività ultraveloce.
-                                        </p>
-                                        </div>
-                                        <div className="servizi-card-description">
-                                        <p>MEDINET progetta reti in fibra ottica di giunzione e accesso, utilizzando tecnologie FTTC, FTTS, FTTB, FTTH. Offre anche servizi di progettazione esecutiva e di ottenimento permessi da Enti pubblici.</p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        
-                    </div>
-                </div>
+              <div className="servizi-card-description">
+                <p>
+                  MEDINET si occupa di progettazione, installazione e ottimizzazione delle reti di telefonia mobile, inclusi
+                  sistemi radio (2G, 3G, 4G, 5G) e stazioni radio base. Gestisce anche decommissioning, migrazione tecnologica, e
+                  rinnovo di permessi e contratti per le infrastrutture mobili.
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card 2: Telefonia Fissa */}
+      <div className="col-12 col-md-6 col-lg-4">
+        <div className="card-wrapper card-space">
+          <div className="card card-bg card-big">
+            <div className="card-body">
+              <div className="top-icon">
+                <center>
+                  <img src={TelefoniaFissa} alt="Antenna Icon" className="icon" />
+                </center>
+              </div>
+              <h3 className="card-title h5">
+                <center>TELEFONIA FISSA</center>
+              </h3>
+              <div className="card-content">
+                <p className="card-text font-serif">
+                  Servizi di comunicazione fissa ad alta qualità.
+                </p>
+              </div>
+
+              <div className="servizi-card-description">
+                <p>
+                  MEDINET esegue attività di Installation & Commissioning (I&C) su apparati di accesso fisso (come ISAM, MSAN, ONUcab,
+                  OLT) e di trasporto (SDH, WDM, DWDM). Si occupa anche di lavori su centrali Telecom, come la compattazione ATM e il
+                  decommissioning PSTN.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card 3: Energia e Mobilità */}
+      <div className="col-12 col-md-6 col-lg-4">
+        <div className="card-wrapper card-space">
+          <div className="card card-bg card-big">
+            <div className="card-body">
+              <div className="top-icon">
+                <center>
+                  <img src={EnergiaEMobilita} alt="Antenna Icon" className="icon" />
+                </center>
+              </div>
+              <h3 className="card-title h5">
+                <center>ENERGIA E MOBILITÀ</center>
+              </h3>
+              <div className="card-content">
+                <p className="card-text font-serif">
+                  Soluzioni energetiche e trasporti sostenibili.
+                </p>
+              </div>
+              <div className="servizi-card-description">
+                <p>
+                  MEDINET si occupa della progettazione di reti elettriche, impianti da fonti di energia alternative e colonnine di
+                  ricarica per auto elettriche.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card 4: IoT in ambito tech e industry */}
+      <div className="col-12 col-md-6 col-lg-4">
+        <div className="card-wrapper card-space">
+          <div className="card card-bg card-big">
+            <div className="card-body">
+              <div className="top-icon">
+                <center>
+                  <img src={IotIndustry} alt="Antenna Icon" className="icon" />
+                </center>
+              </div>
+              <h3 className="card-title h5">
+                <center>IoT IN AMBITO TECLO E INDUSTRY</center>
+              </h3>
+              <div className="card-content">
+                <p className="card-text font-serif">
+                  Tecnologie IoT per la gestione e il monitoraggio.
+                </p>
+              </div>
+              <div className="servizi-card-description">
+                <p>
+                  MEDINET ha sviluppato soluzioni IoT, tra cui il sistema S.A.C.A.P. per il monitoraggio delle stazioni radio base e
+                  un’applicazione per il controllo dell’utilizzo di dispositivi di protezione individuale (DPI) tramite smartphone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card 5: Smart City e Rigenerazione Urbana */}
+      <div className="col-12 col-md-6 col-lg-4">
+        <div className="card-wrapper card-space">
+          <div className="card card-bg card-big">
+            <div className="card-body">
+              <div className="top-icon">
+                <center>
+                  <img src={SmartCity} alt="Antenna Icon" className="icon" />
+                </center>
+              </div>
+              <h3 className="card-title h5">
+                <center>SMART CITY E RIGENERAZIONE URBANA</center>
+              </h3>
+              <div className="card-content">
+                <p className="card-text font-serif">
+                  Infrastrutture intelligenti per città sostenibili.
+                </p>
+              </div>
+              <div className="servizi-card-description">
+                <p>
+                  MEDINET progetta soluzioni di tele gestione per la pubblica illuminazione, parcheggi a pagamento e reti wireless,
+                  con l’obiettivo di rendere più intelligente la gestione urbana, inclusa la mobilità e le risorse ambientali.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card 6: Next Generation Networks */}
+      <div className="col-12 col-md-6 col-lg-4">
+        <div className="card-wrapper card-space">
+          <div className="card card-bg card-big">
+            <div className="card-body">
+              <div className="top-icon">
+                <center>
+                  <img src={NextGenerationNetworks} alt="Antenna Icon" className="icon" />
+                </center>
+              </div>
+              <h3 className="card-title h5">
+                <center>NEXT GENERATION NETWORKS</center>
+              </h3>
+              <div className="card-content">
+                <p className="card-text font-serif">
+                  Reti avanzate per una connettività ultraveloce.
+                </p>
+              </div>
+              <div className="servizi-card-description">
+                <p>
+                  MEDINET progetta reti in fibra ottica di giunzione e accesso, utilizzando tecnologie FTTC, FTTS, FTTB, FTTH. Offre anche
+                  servizi di progettazione esecutiva e di ottenimento permessi da Enti pubblici.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 {/* FINE SEZIONE "SERVIZI" */}
 
 
