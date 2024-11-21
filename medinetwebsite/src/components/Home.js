@@ -32,7 +32,7 @@ import LogoEriccson from '../assets/logos/ericcson.png';
 import LogoHuawei from '../assets/logos/huawei.png';
 import LogoInwit from '../assets/logos/inwit.png';
 import LogoCellNex from '../assets/logos/cellnex.png';
-import Service from '../../public/service.jpg'
+import Service from '../../public/service6.jpg'
 
 //importiamo le foto della homepage che andranno nel carousel 
 import HomePage1 from '../assets/images/HomePage1.jpg';
@@ -246,9 +246,23 @@ const Home = () => {
     color: "#fff", // Colore del testo per renderlo visibile sull'immagine
   }}
 >
-  <div className="container">
-    <h1 style={{ textAlign: "left" }}>SERVIZI</h1> {/* Allinea a sinistra */}
-    
+  <div className="container" >
+  <h1 
+    style={{
+      textAlign: "center", 
+      color: "white",  // Colore del testo bianco per il contrasto
+      textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)", // Ombra del testo per aumentarne la visibilità
+      fontSize: "3rem", 
+      fontWeight: "bold", 
+      letterSpacing: "2px", 
+      padding: "20px", 
+      lineHeight: "1.2", 
+      backgroundColor:"rgba(0,0,0,0.3)",
+      borderRadius:"50px"
+    }}
+  >
+    Tutto ciò che possiamo offrirti...
+  </h1>
     <div className="row">
       {/* Card 1: Telefonia Mobile */}
       <div className="col-12 col-md-6 col-lg-4">

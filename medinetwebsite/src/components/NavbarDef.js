@@ -136,7 +136,7 @@ function NavbarDef({scrolled}) {
             },
           }}
           sx={{
-            display: { sm:'none',xs: 'none', md: 'flex',lg:"flex" },
+            display: { sm:'none',xs: 'none', md: 'none',lg:"flex" },
             "& .MuiTab-root": {
               fontSize: scrolled ? "14px" : "16px",
               color: scrolled ? "white" : "#174081",
@@ -233,7 +233,7 @@ function NavbarDef({scrolled}) {
           />
           )}
         </Box>
-        <Box sx={{ display: { xs: "flex", sm: "flex", md: "none", lg: "none" }, gap: 0 }}>
+        <Box sx={{ display: { xs: "flex", sm: "flex", md: "flex", lg: "none" }, gap: 0 }}>
           <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
