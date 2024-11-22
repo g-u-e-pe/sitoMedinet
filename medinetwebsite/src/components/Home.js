@@ -33,6 +33,7 @@ import LogoHuawei from '../assets/logos/huawei.png';
 import LogoInwit from '../assets/logos/inwit.png';
 import LogoCellNex from '../assets/logos/cellnex.png';
 import Service from '../../public/service6.jpg'
+import Circle from '../../public/circle.jpg'
 
 //importiamo le foto della homepage che andranno nel carousel 
 import HomePage1 from '../assets/images/HomePage1.jpg';
@@ -305,7 +306,7 @@ const Home = () => {
                 borderRadius:"50px"
               }}
             >
-              Tutto ciò che possiamo offrirti...
+              Tutto Ciò Che Possiamo Offrirti...
             </h1>
               <div className="row">
                 {/* Card 1: Telefonia Mobile */}
@@ -490,19 +491,27 @@ const Home = () => {
             </div>
           </div>
         {/* FINE SEZIONE "SERVIZI" */}
-        </div>
+
 
 
 
 
 
 {/*------------------------------ INIZIO SEZIONE Clienti */}
-<div id="clienti" className="clienti-wrapper">
-  <div className="container">
+<div id="clienti" className="clienti-wrapper" style={{ backgroundColor:"rgba(255,255,255,0.9)",
+  padding: '100px 0', /* Spazio intorno alla sezione */
+  marginTop:'0'}}>
+  <div className="container" >
     <center>
-      <h2>I nostri clienti</h2>
-    </center>
-    <hr id="lineaSezioni" />
+      <h2 style={{
+        color: '#4D4D4D',
+        fontWeight: 'bold',
+        fontSize: '2.5rem',
+        marginBottom: '20px',
+        margin: '0 auto', // Centra il titolo
+      }} data-aos="fade-up"  data-aos-duration="2000">La Nostra Forza: La Fiducia dei Nostri Clienti</h2>
+    </center>                          
+
     <div className="sezioneLoghiClienti">    
     <div className="row text-center justify-content-center"  data-aos="fade-up"  data-aos-duration="2000">
       {[  
@@ -530,7 +539,7 @@ const Home = () => {
   </div>
 </div>
 {/*------------------------------ FINE SEZIONE Clienti */}
-
+</div>
 
 
 
@@ -539,9 +548,14 @@ const Home = () => {
  <div id="sedi" className="sedi-wrapper">
   <div className="container">
     <center>
-      <h2>Le nostre sedi</h2>
+      <h2 style={{
+        color: '#174081',
+        fontWeight: 'bold',
+        fontSize: '2.5rem',
+        marginBottom: '20px',
+        margin: '0 auto', // Centra il titolo
+      }}>Le nostre Sedi</h2>
     </center>
-    <hr id="lineaSezioni" />
 
     <div className="row justify-content-center">
       {/* Card unica che occupa 10 colonne */}
