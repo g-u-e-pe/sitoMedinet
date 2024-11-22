@@ -117,336 +117,380 @@ const Home = () => {
 
 
         {/* INIZIO SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI */}
-<div id="home" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-    <div className="carousel-indicators">
-        <button
-            type="button"
-            data-bs-target="#home"  
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-        ></button>
-        <button
-            type="button"
-            data-bs-target="#home"  
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-        ></button>
-        <button
-            type="button"
-            data-bs-target="#home" 
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-        ></button>
-    </div>
-    <div className="carousel-inner">
-        <div className="carousel-item active">
-            <img src={HomePage1} className="d-block w-100" alt="First slide" />
-            <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
-            <h5 className="text-center">Connettività e Innovazione nelle Reti Mobili</h5>
-            <p className="text-center">Siamo i partner per l’evoluzione delle telecomunicazioni</p>
-        </div>
-        </div>
-        <div className="carousel-item">
-            <img src={HomePage2} className="d-block w-100" alt="Second slide"   />
-            <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
-            <h5 className="text-center">Verso Città Intelligenti e Connesse</h5>
-            <p className="text-center"> Tecnologia IoT per trasformare l’ambiente urbano</p>
-        </div>
-        </div>
-        <div className="carousel-item">
-            <img src={HomePage3} className="d-block w-100" alt="Third slide" />
-            <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
-            <h5 className="text-center">Potenziamo il Futuro con Reti a Banda Ultra Larga</h5>
-            <p className="text-center">Soluzioni avanzate per il digitale di domani</p>
-        </div>
-        </div>
-    </div>
-    <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#home" 
-        data-bs-slide="prev"
-    >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Precedente</span>
-    </button>
-    <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#home"  
-        data-bs-slide="next"
-    >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Successivo</span>
-    </button>
-</div>
-{/* FINE SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI */}
+        <div id="home" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div className="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#home"  
+                    data-bs-slide-to="0"
+                    className="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#home"  
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#home" 
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
+            </div>
+            <div className="carousel-inner">
+                <div className="carousel-item active">
+                    <img src={HomePage1} className="d-block w-100" alt="First slide" />
+                    <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
+                    <h5 className="text-center">Connettività e Innovazione nelle Reti Mobili</h5>
+                    <p className="text-center">Siamo i partner per l’evoluzione delle telecomunicazioni</p>
+                </div>
+                </div>
+                <div className="carousel-item">
+                    <img src={HomePage2} className="d-block w-100" alt="Second slide"   />
+                    <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
+                    <h5 className="text-center">Verso Città Intelligenti e Connesse</h5>
+                    <p className="text-center"> Tecnologia IoT per trasformare l’ambiente urbano</p>
+                </div>
+                </div>
+                <div className="carousel-item">
+                    <img src={HomePage3} className="d-block w-100" alt="Third slide" />
+                    <div className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center" style={{ height: "15%" }}>
+                    <h5 className="text-center">Potenziamo il Futuro con Reti a Banda Ultra Larga</h5>
+                    <p className="text-center">Soluzioni avanzate per il digitale di domani</p>
+                </div>
+                </div>
+            </div>
+            <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#home" 
+                data-bs-slide="prev"
+            >
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Precedente</span>
+            </button>
+            <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#home"  
+                data-bs-slide="next"
+            >
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Successivo</span>
+            </button>
+        </div >
+        {/* FINE SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI */}
+        <div style={{
+            backgroundImage: `url(${Service})`,  // Sostituisci con il tuo URL immagine
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed",  // Effetto Parallax
+            backgroundRepeat: "no-repeat",
+            color: "#fff", // Colore del testo per renderlo visibile sull'immagine
+          }}>
+          <div id="chi-siamo" className="section py-5" style={{ backgroundColor: "rgba(255,255,255,0.9)" }}>
+            <div className="container">
+              <div className="row" style={{ padding: '50px 0' }}>
+                <div
+                  className="text-content"
+                  style={{
+                    color: '#000',
+                    margin: '0 auto',
+                    lineHeight: '1.8',
+                  }}
+                >
+                  {/* Contenitore del Titolo */}
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    style={{
+                      marginBottom: '30px',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <h2
+                      style={{
+                        color: '#174081',
+                        fontWeight: 'bold',
+                        fontSize: '3rem',
+                        marginBottom: '20px',
+                        maxWidth: '1500px', // Più largo rispetto al testo sottostante
+                        margin: '0 auto', // Centra il titolo
+                        textAlign: 'left', // Giustifica il testo del titolo
+                      }}
+                    >
+                      Innovazione e connessione: la nostra missione è costruire il futuro con
+                      soluzioni tecnologiche all'avanguardia, sostenibili e su misura per le
+                      tue esigenze.
+                    </h2>
+                  </div>
 
-<div id="chi-siamo" className="section py-5">
-    <div className="container">
-        {/*<div className="text-center mb-4">
-            <h2 className="section-title">Chi Siamo</h2>
-            <hr id="lineaSezioni" />
-        </div>*/}
-
-<div className="row align-items-center" style={{padding: '50px 0' }}>
-  {/* Colonna Immagine */}
-  <div className="col-lg-6 mb-4 mb-lg-0">
-    <div className="image-container" style={{ position: 'relative', overflow: 'hidden', borderRadius: '15px', boxShadow: '0px 10px 20px rgba(0,0,0,0.1)' }}>
-      <img 
-        src={ChiSiamo } 
-        alt="Chi siamo image" 
-        className="chiSiamoImage" 
-        style={{ width: '100%', transition: 'transform 0.3s ease-in-out' }} 
-        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-      />
-    </div>
-  </div>
-
-  {/* Colonna Testo */}
-  <div className="col-lg-6">
-    <div className="text-content" style={{ color: '#333' }}>
-      {/* Animazione e Titoli */}
-      <div data-aos="fade-up" data-aos-duration="1000" style={{ marginBottom: '30px' }}>
-        <h2 style={{ color: '#174081', fontWeight: 'bold', marginBottom: '20px' }}>La Nostra Storia</h2>
-        <p style={{ lineHeight: '1.8', color: '#555' }}>
-          MEDINET nasce come realtà specializzata nel settore delle telecomunicazioni, crescendo rapidamente grazie alla competenza e alla capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi esordi, l'azienda ha ampliato la propria offerta, integrando servizi di progettazione e implementazione di infrastrutture per reti mobili e fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle energie rinnovabili.
-        </p>
-      </div>
-
-      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        <h2 style={{ color: '#174081', fontWeight: 'bold', marginBottom: '20px' }}>La Nostra Missione</h2>
-        <p style={{ lineHeight: '1.8', color: '#555' }}>
-          La missione di MEDINET è fornire soluzioni tecnologiche avanzate e personalizzate che rispondano alle esigenze di connettività e trasformazione digitale dei suoi clienti. Ci impegniamo a garantire eccellenza operativa e sostenibilità, realizzando progetti che uniscono qualità, efficienza e innovazione.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-</div>
-
-
-
- {/* SEZIONE SERVIZI CON LE CARD */}
- <div 
-  id="servizi" 
-  className="section" 
-  style={{
-    backgroundImage: `url(${Service})`,  // Sostituisci con il tuo URL immagine
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",  // Effetto Parallax
-    backgroundRepeat: "no-repeat",
-    padding: "50px 0", // Distanza tra il bordo e il contenuto
-    color: "#fff", // Colore del testo per renderlo visibile sull'immagine
-  }}
->
-  <div className="container" >
-  <h1 
-    style={{
-      textAlign: "center", 
-      color: "white",  // Colore del testo bianco per il contrasto
-      textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)", // Ombra del testo per aumentarne la visibilità
-      fontSize: "3rem", 
-      fontWeight: "bold", 
-      letterSpacing: "2px", 
-      padding: "20px", 
-      lineHeight: "1.2", 
-      backgroundColor:"rgba(0,0,0,0.3)",
-      borderRadius:"50px"
-    }}
-  >
-    Tutto ciò che possiamo offrirti...
-  </h1>
-    <div className="row">
-      {/* Card 1: Telefonia Mobile */}
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card-wrapper card-space">
-          <div className="card card-bg card-big">
-            <div className="card-body">
-            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
-                <center>
-                  <img src={TelefoniaMobile} alt="Antenna Icon" className="icon" />
-                </center>
-              </div>
-              <h3 className="card-title h5">
-                <center>TELEFONIA MOBILE</center>
-              </h3>
-              <div className="card-content">
-                <p className="card-text font-serif">
-                  Infrastrutture e soluzioni per le reti mobili.
-                </p>
-              </div>
-
-              <div className="servizi-card-description">
-                <p>
-                  MEDINET si occupa di progettazione, installazione e ottimizzazione delle reti di telefonia mobile, inclusi
-                  sistemi radio (2G, 3G, 4G, 5G) e stazioni radio base. Gestisce anche decommissioning, migrazione tecnologica, e
-                  rinnovo di permessi e contratti per le infrastrutture mobili.
-                </p>
+                  {/* Contenitore del Testo */}
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="200"
+                    style={{
+                      maxWidth: '1000px', // Più stretto rispetto al titolo
+                      margin: '0 auto', // Centra il testo
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: '1.5rem', // Dimensione del testo interno
+                        fontWeight:"bold",
+                        color: '#4D4D4D',
+                        marginTop:'100px',
+                        marginBottom: '20px',
+                        textAlign: 'justify',
+                      }}
+                    >
+                      MEDINET nasce come realtà specializzata nel settore delle
+                      telecomunicazioni, crescendo rapidamente grazie alla competenza e alla
+                      capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi
+                      esordi, l'azienda ha ampliato la propria offerta, integrando servizi di
+                      progettazione e implementazione di infrastrutture per reti mobili e
+                      fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle
+                      energie rinnovabili.
+                    </p>
+                    <p
+                      style={{
+                        fontSize: '1.5rem',
+                        fontWeight:"bold",
+                        color: '#4D4D4D',
+                        textAlign: 'justify',
+                      }}
+                    >
+                      La missione di MEDINET è fornire soluzioni tecnologiche avanzate e
+                      personalizzate che rispondano alle esigenze di connettività e
+                      trasformazione digitale dei suoi clienti. Ci impegniamo a garantire
+                      eccellenza operativa e sostenibilità, realizzando progetti che uniscono
+                      qualità, efficienza e innovazione.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Card 2: Telefonia Fissa */}
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card-wrapper card-space">
-          <div className="card card-bg card-big">
-            <div className="card-body">
-            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
-                <center>
-                  <img src={TelefoniaFissa} alt="Antenna Icon" className="icon" />
-                </center>
-              </div>
-              <h3 className="card-title h5">
-                <center>TELEFONIA FISSA</center>
-              </h3>
-              <div className="card-content">
-                <p className="card-text font-serif">
-                  Servizi di comunicazione fissa ad alta qualità.
-                </p>
-              </div>
+        {/* SEZIONE SERVIZI CON LE CARD */}
+          <div 
+            id="servizi" 
+            className="section" 
+            style={{
+              
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundAttachment: "fixed",  // Effetto Parallax
+              backgroundRepeat: "no-repeat",
+              padding: "50px 0", // Distanza tra il bordo e il contenuto
+              color: "#fff", // Colore del testo per renderlo visibile sull'immagine
+            }}
+          >
+            <div className="container" >
+            <h1 
+              style={{
+                textAlign: "left", 
+                color: "white",  // Colore del testo bianco per il contrasto
+                textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)", // Ombra del testo per aumentarne la visibilità
+                fontSize: "3rem", 
+                fontWeight: "bold", 
+                letterSpacing: "2px", 
+                padding: "20px", 
+                lineHeight: "1.2", 
+                backgroundColor:"rgba(0,0,0,0.3)",
+                borderRadius:"50px"
+              }}
+            >
+              Tutto ciò che possiamo offrirti...
+            </h1>
+              <div className="row">
+                {/* Card 1: Telefonia Mobile */}
+                <div className="col-12 col-md-6 col-lg-4">
+                  <div className="card-wrapper card-space">
+                    <div className="card card-bg card-big">
+                      <div className="card-body">
+                      <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
+                          <center>
+                            <img src={TelefoniaMobile} alt="Antenna Icon" className="icon" />
+                          </center>
+                        </div>
+                        <h3 className="card-title h5">
+                          <center>TELEFONIA MOBILE</center>
+                        </h3>
+                        <div className="card-content">
+                          <p className="card-text font-serif">
+                            Infrastrutture e soluzioni per le reti mobili.
+                          </p>
+                        </div>
 
-              <div className="servizi-card-description">
-                <p>
-                  MEDINET esegue attività di Installation & Commissioning (I&C) su apparati di accesso fisso (come ISAM, MSAN, ONUcab,
-                  OLT) e di trasporto (SDH, WDM, DWDM). Si occupa anche di lavori su centrali Telecom, come la compattazione ATM e il
-                  decommissioning PSTN.
-                </p>
+                        <div className="servizi-card-description">
+                          <p>
+                            MEDINET si occupa di progettazione, installazione e ottimizzazione delle reti di telefonia mobile, inclusi
+                            sistemi radio (2G, 3G, 4G, 5G) e stazioni radio base. Gestisce anche decommissioning, migrazione tecnologica, e
+                            rinnovo di permessi e contratti per le infrastrutture mobili.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 2: Telefonia Fissa */}
+                <div className="col-12 col-md-6 col-lg-4">
+                  <div className="card-wrapper card-space">
+                    <div className="card card-bg card-big">
+                      <div className="card-body">
+                      <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
+                          <center>
+                            <img src={TelefoniaFissa} alt="Antenna Icon" className="icon" />
+                          </center>
+                        </div>
+                        <h3 className="card-title h5">
+                          <center>TELEFONIA FISSA</center>
+                        </h3>
+                        <div className="card-content">
+                          <p className="card-text font-serif">
+                            Servizi di comunicazione fissa ad alta qualità.
+                          </p>
+                        </div>
+
+                        <div className="servizi-card-description">
+                          <p>
+                            MEDINET esegue attività di Installation & Commissioning (I&C) su apparati di accesso fisso (come ISAM, MSAN, ONUcab,
+                            OLT) e di trasporto (SDH, WDM, DWDM). Si occupa anche di lavori su centrali Telecom, come la compattazione ATM e il
+                            decommissioning PSTN.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 3: Energia e Mobilità */}
+                <div className="col-12 col-md-6 col-lg-4">
+                  <div className="card-wrapper card-space">
+                    <div className="card card-bg card-big">
+                      <div className="card-body">
+                      <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
+                          <center>
+                            <img src={EnergiaEMobilita} alt="Antenna Icon" className="icon" />
+                          </center>
+                        </div>
+                        <h3 className="card-title h5">
+                          <center>ENERGIA E MOBILITÀ</center>
+                        </h3>
+                        <div className="card-content">
+                          <p className="card-text font-serif">
+                            Soluzioni energetiche e trasporti sostenibili.
+                          </p>
+                        </div>
+                        <div className="servizi-card-description">
+                          <p>
+                            MEDINET si occupa della progettazione di reti elettriche, impianti da fonti di energia alternative e colonnine di
+                            ricarica per auto elettriche.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 4: IoT in ambito tech e industry */}
+                <div className="col-12 col-md-6 col-lg-4">
+                  <div className="card-wrapper card-space">
+                    <div className="card card-bg card-big">
+                      <div className="card-body">
+                      <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
+                          <center>
+                            <img src={IotIndustry} alt="Antenna Icon" className="icon" />
+                          </center>
+                        </div>
+                        <h3 className="card-title h5">
+                          <center>IoT IN AMBITO TECLO E INDUSTRY</center>
+                        </h3>
+                        <div className="card-content">
+                          <p className="card-text font-serif">
+                            Tecnologie IoT per la gestione e il monitoraggio.
+                          </p>
+                        </div>
+                        <div className="servizi-card-description">
+                          <p>
+                            MEDINET ha sviluppato soluzioni IoT, tra cui il sistema S.A.C.A.P. per il monitoraggio delle stazioni radio base e
+                            un’applicazione per il controllo dell’utilizzo di dispositivi di protezione individuale (DPI) tramite smartphone.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 5: Smart City e Rigenerazione Urbana */}
+                <div className="col-12 col-md-6 col-lg-4">
+                  <div className="card-wrapper card-space">
+                    <div className="card card-bg card-big">
+                      <div className="card-body">
+                      <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
+                          <center>
+                            <img src={SmartCity} alt="Antenna Icon" className="icon" />
+                          </center>
+                        </div>
+                        <h3 className="card-title h5">
+                          <center>SMART CITY E RIGENERAZIONE URBANA</center>
+                        </h3>
+                        <div className="card-content">
+                          <p className="card-text font-serif">
+                            Infrastrutture intelligenti per città sostenibili.
+                          </p>
+                        </div>
+                        <div className="servizi-card-description">
+                          <p>
+                            MEDINET progetta soluzioni di tele gestione per la pubblica illuminazione, parcheggi a pagamento e reti wireless,
+                            con l’obiettivo di rendere più intelligente la gestione urbana, inclusa la mobilità e le risorse ambientali.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 6: Next Generation Networks */}
+                <div className="col-12 col-md-6 col-lg-4">
+                  <div className="card-wrapper card-space">
+                    <div className="card card-bg card-big">
+                      <div className="card-body">
+                      <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
+                          <center>
+                            <img src={NextGenerationNetworks} alt="Antenna Icon" className="icon" />
+                          </center>
+                        </div>
+                        <h3 className="card-title h5">
+                          <center>NEXT GENERATION NETWORKS</center>
+                        </h3>
+                        <div className="card-content">
+                          <p className="card-text font-serif">
+                            Reti avanzate per una connettività ultraveloce.
+                          </p>
+                        </div>
+                        <div className="servizi-card-description">
+                          <p>
+                            MEDINET progetta reti in fibra ottica di giunzione e accesso, utilizzando tecnologie FTTC, FTTS, FTTB, FTTH. Offre anche
+                            servizi di progettazione esecutiva e di ottenimento permessi da Enti pubblici.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
+        {/* FINE SEZIONE "SERVIZI" */}
         </div>
-      </div>
-
-      {/* Card 3: Energia e Mobilità */}
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card-wrapper card-space">
-          <div className="card card-bg card-big">
-            <div className="card-body">
-            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
-                <center>
-                  <img src={EnergiaEMobilita} alt="Antenna Icon" className="icon" />
-                </center>
-              </div>
-              <h3 className="card-title h5">
-                <center>ENERGIA E MOBILITÀ</center>
-              </h3>
-              <div className="card-content">
-                <p className="card-text font-serif">
-                  Soluzioni energetiche e trasporti sostenibili.
-                </p>
-              </div>
-              <div className="servizi-card-description">
-                <p>
-                  MEDINET si occupa della progettazione di reti elettriche, impianti da fonti di energia alternative e colonnine di
-                  ricarica per auto elettriche.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Card 4: IoT in ambito tech e industry */}
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card-wrapper card-space">
-          <div className="card card-bg card-big">
-            <div className="card-body">
-            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
-                <center>
-                  <img src={IotIndustry} alt="Antenna Icon" className="icon" />
-                </center>
-              </div>
-              <h3 className="card-title h5">
-                <center>IoT IN AMBITO TECLO E INDUSTRY</center>
-              </h3>
-              <div className="card-content">
-                <p className="card-text font-serif">
-                  Tecnologie IoT per la gestione e il monitoraggio.
-                </p>
-              </div>
-              <div className="servizi-card-description">
-                <p>
-                  MEDINET ha sviluppato soluzioni IoT, tra cui il sistema S.A.C.A.P. per il monitoraggio delle stazioni radio base e
-                  un’applicazione per il controllo dell’utilizzo di dispositivi di protezione individuale (DPI) tramite smartphone.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Card 5: Smart City e Rigenerazione Urbana */}
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card-wrapper card-space">
-          <div className="card card-bg card-big">
-            <div className="card-body">
-            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
-                <center>
-                  <img src={SmartCity} alt="Antenna Icon" className="icon" />
-                </center>
-              </div>
-              <h3 className="card-title h5">
-                <center>SMART CITY E RIGENERAZIONE URBANA</center>
-              </h3>
-              <div className="card-content">
-                <p className="card-text font-serif">
-                  Infrastrutture intelligenti per città sostenibili.
-                </p>
-              </div>
-              <div className="servizi-card-description">
-                <p>
-                  MEDINET progetta soluzioni di tele gestione per la pubblica illuminazione, parcheggi a pagamento e reti wireless,
-                  con l’obiettivo di rendere più intelligente la gestione urbana, inclusa la mobilità e le risorse ambientali.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Card 6: Next Generation Networks */}
-      <div className="col-12 col-md-6 col-lg-4">
-        <div className="card-wrapper card-space">
-          <div className="card card-bg card-big">
-            <div className="card-body">
-            <div className="top-icon" data-aos="zoom-in"  data-aos-duration="100"  data-aos-easing="ease-in-sine">
-                <center>
-                  <img src={NextGenerationNetworks} alt="Antenna Icon" className="icon" />
-                </center>
-              </div>
-              <h3 className="card-title h5">
-                <center>NEXT GENERATION NETWORKS</center>
-              </h3>
-              <div className="card-content">
-                <p className="card-text font-serif">
-                  Reti avanzate per una connettività ultraveloce.
-                </p>
-              </div>
-              <div className="servizi-card-description">
-                <p>
-                  MEDINET progetta reti in fibra ottica di giunzione e accesso, utilizzando tecnologie FTTC, FTTS, FTTB, FTTH. Offre anche
-                  servizi di progettazione esecutiva e di ottenimento permessi da Enti pubblici.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-{/* FINE SEZIONE "SERVIZI" */}
 
 
 
