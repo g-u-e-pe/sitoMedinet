@@ -145,9 +145,13 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease; /* Transizione morbida per ogni cambiamento */
 }
 
+#servizi .card-wrapper {
+  perspective: 1000px; /* Distanza della prospettiva per il flip */
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
 
 /*quando c'è hover sulla card, aumenta anche la dimensione dell'icona*/
 #servizi .card:hover .icon {
@@ -182,12 +186,13 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetto hover */
+  transform-style: preserve-3d; /* Mantiene la struttura 3D */
+  transition: transform 0.6s ease-in-out; /* Transizione per il flip */
 }
 
 #servizi .card:hover {
-  transform: translateY(-5px); /* Leggera animazione su hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Ombra più evidente su hover */
+  transform: rotateY(180deg); /* Flip della card */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombra durante il flip */
 }
 
 #servizi .card-title {
@@ -249,14 +254,26 @@ html {
 
 
 
+#servizi .card-wrapper {
+  perspective: 1000px; /* Distanza della prospettiva per il flip */
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
 
 
-/* Nascondere la descrizione inizialmente */
-.servizi-card-description {
+/* Faccia anteriore della card (contenuto principale) */
+#servizi .card-body {
+  backface-visibility: hidden; /* Nasconde la faccia anteriore quando è girata */
+  transition: all 0.3s ease;
+}
+
+/* Faccia posteriore della card (descrizione) */
+#servizi .servizi-card-description {
   display: none; /* La descrizione è nascosta per default */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
-  transform: translateY(10px); /* La descrizione si sposterà leggermente in basso quando appare */
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transizione fluida per l'opacità e il movimento */
   margin-top: 10px; /* Distanza tra il contenuto e la descrizione */
   color: #555; /* Colore del testo per la descrizione, più morbido */
   font-size: 14px; /* Font più grande per una migliore leggibilità */
@@ -264,24 +281,58 @@ html {
   text-align: center; /* Centrato il testo */
   padding: 0 20px; /* Aggiunta di un po' di spazio laterale per non toccare i bordi */
   font-weight: 400; /* Peso del font normale */
+  backface-visibility: hidden; /* Nasconde la parte posteriore quando si gira */
+  transform: rotateY(180deg); /* Rende la descrizione visibile solo dopo il flip */
 }
+
+
+
+/* Nascondere la descrizione di default */
+#servizi .card .servizi-card-description {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Mostra la descrizione quando la card è in hover */
+#servizi .card:hover .servizi-card-description {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /* Quando si passa sopra la card */
 #servizi .card:hover .servizi-card-description {
   display: block;
   opacity: 1; /* La descrizione diventa visibile */
-  transform: translateY(0); /* La descrizione si sposta nella posizione finale */
+  visibility: visible;
+}
+
+/* Piccole modifiche per la visibilità e il layout */
+#servizi .card-title, #servizi .card-text {
+  transition: transform 0.3s ease;
 }
 
 /* Leggera animazione e ombra per la card */
 #servizi .card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animazione fluida per il sollevamento della card e la ombra */
+  transform-style: preserve-3d; /* Mantiene la struttura 3D */
+  transition: transform 0.6s ease-in-out; /* Transizione per il flip */
 }
 
 #servizi .card:hover {
-  transform: translateY(-10px); /* Leggero sollevamento della card */
+  transform: rotateY(180deg); /* Flip della card */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombra più prominente */
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
