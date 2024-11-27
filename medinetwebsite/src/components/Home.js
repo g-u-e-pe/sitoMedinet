@@ -33,7 +33,7 @@ import LogoHuawei from '../assets/logos/huawei.png';
 import LogoInwit from '../assets/logos/inwit.png';
 import LogoCellNex from '../assets/logos/cellnex.png';
 import Service from '../../public/service6.jpg'
-import Circle from '../../public/circle.jpg'
+import Team from '../../public/work.jpg'
 
 //importiamo le foto della homepage che andranno nel carousel 
 import HomePage1 from '../assets/images/HomePage1.jpg';
@@ -228,54 +228,85 @@ const Home = () => {
                       tue esigenze.
                     </h2>
                   </div>
-
-                  {/* Contenitore del Testo */}
-                  <div
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-delay="200"
+                </div>
+              </div>
+              <div className="row">
+                <div
+                className='col-md-7'
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  style={{
+                    color: "#4D4D4D",
+                    lineHeight: "2.2",
+                    textAlign: "left",
+                    marginBottom:"30px"
+                  }}
+                >
+                  <p
                     style={{
-                      maxWidth: '1000px', // Più stretto rispetto al titolo
-                      margin: '0 auto', // Centra il testo
+                      fontSize: '1.2rem', // Dimensione del testo interno
+                      color: '#4D4D4D',
+                      marginBottom: '40px',
+                      textAlign: 'left',
                     }}
                   >
-                    <p
+                    MEDINET nasce come realtà specializzata nel settore delle
+                    telecomunicazioni, crescendo rapidamente grazie alla competenza e alla
+                    capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi
+                    esordi, l'azienda ha ampliato la propria offerta, integrando servizi di
+                    progettazione e implementazione di infrastrutture per reti mobili e
+                    fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle
+                    energie rinnovabili.
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '1.2rem',
+                      color: '#4D4D4D',
+                      textAlign: 'left',
+                    }}
+                  >
+                    La missione di MEDINET è fornire soluzioni tecnologiche avanzate e
+                    personalizzate che rispondano alle esigenze di connettività e
+                    trasformazione digitale dei suoi clienti. Ci impegniamo a garantire
+                    eccellenza operativa e sostenibilità, realizzando progetti che uniscono
+                    qualità, efficienza e innovazione.
+                  </p>
+                </div>
+                <div className="col-md-5 d-none d-md-block" >
+                  <div
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      overflow: "hidden", // Nasconde l'eccesso di immagine se necessario
+                      paddingRight:"30px",
+                      paddingLeft:"30px",
+                      paddingBottom:"30px",
+                      
+                    }}
+                  >
+                    <img
+                      src={Team} // Sostituisci con l'immagine giusta
+                      alt="Chi siamo"
                       style={{
-                        fontSize: '1.5rem', // Dimensione del testo interno
-                        fontWeight:"bold",
-                        color: '#4D4D4D',
-                        marginTop:'100px',
-                        marginBottom: '20px',
-                        textAlign: 'justify',
+                        width: "100%", // Occupa tutta la larghezza
+                        height: "100%", // Occupa tutta l'altezza
+                        objectFit: "cover", // Ritaglia l'immagine senza deformarla
+                        borderRadius: "10px",
+                        boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
                       }}
-                    >
-                      MEDINET nasce come realtà specializzata nel settore delle
-                      telecomunicazioni, crescendo rapidamente grazie alla competenza e alla
-                      capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi
-                      esordi, l'azienda ha ampliato la propria offerta, integrando servizi di
-                      progettazione e implementazione di infrastrutture per reti mobili e
-                      fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle
-                      energie rinnovabili.
-                    </p>
-                    <p
-                      style={{
-                        fontSize: '1.5rem',
-                        fontWeight:"bold",
-                        color: '#4D4D4D',
-                        textAlign: 'justify',
-                      }}
-                    >
-                      La missione di MEDINET è fornire soluzioni tecnologiche avanzate e
-                      personalizzate che rispondano alle esigenze di connettività e
-                      trasformazione digitale dei suoi clienti. Ci impegniamo a garantire
-                      eccellenza operativa e sostenibilità, realizzando progetti che uniscono
-                      qualità, efficienza e innovazione.
-                    </p>
+                      className="img-fluid"
+                    />
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
+
 
         {/* SEZIONE SERVIZI CON LE CARD */}
           <div 
@@ -301,12 +332,11 @@ const Home = () => {
                 fontWeight: "bold", 
                 letterSpacing: "2px", 
                 padding: "20px", 
-                lineHeight: "1.2", 
-                backgroundColor:"rgba(0,0,0,0.3)",
+                lineHeight: "1.2",
                 borderRadius:"50px"
               }}
             >
-              Tutto Ciò Che Possiamo Offrirti...
+              Tutto quello che possiamo offrirti...
             </h1>
               <div className="row">
                 {/* Card 1: Telefonia Mobile */}
@@ -506,14 +536,14 @@ const Home = () => {
       <h2 style={{
         color: '#4D4D4D',
         fontWeight: 'bold',
-        fontSize: '2.5rem',
+        fontSize: '3rem',
         marginBottom: '20px',
         margin: '0 auto', // Centra il titolo
-      }} data-aos="fade-up"  data-aos-duration="2000">La Nostra Forza: La Fiducia dei Nostri Clienti</h2>
+      }} data-aos="fade-up"  data-aos-duration="2000">La nostra forza: la Fiducia dei Nostri Clienti</h2>
     </center>                          
 
     <div className="sezioneLoghiClienti">    
-    <div className="row text-center justify-content-center"  data-aos="fade-up"  data-aos-duration="2000">
+    <div className="row text-center justify-content-center"  data-aos="fade-up"  data-aos-duration="2000" style={{marginTop:"100px"}}>
       {[  
         { logo: LogoTim, name: 'tim', url: 'https://www.tim.it'  }, 
         { logo: LogoWind, name: 'wind', url: 'https://www.windtre.it'  }, 
@@ -545,7 +575,7 @@ const Home = () => {
 
 
  {/*------------------------------ INIZIO SEZIONE SEDI */}
- <div id="sedi" className="sedi-wrapper">
+ <div id="sedi" className="sedi-wrapper" >
   <div className="container">
     <center>
       <h2 style={{
