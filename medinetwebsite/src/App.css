@@ -40,13 +40,14 @@ html {
 
 .carousel-caption {
   position: absolute;
-  top: 70%; /* Posiziona la didascalia più in basso */
-  transform: translateY(-50%); /* Centra la didascalia verticalmente */
+  top: 45%; /* Posiziona la didascalia più in basso */
+
   background-color: rgba(0, 0, 0, 0.6); /* Pannello nero semitrasparente con maggiore opacità */
   padding: 30px; /* Maggiore spazio per migliorare la leggibilità */
-  border-radius: 10px; /* Rende i bordi più arrotondati */
+  border-radius: 13px; /* Rende i bordi più arrotondati */
   color: #ffffff !important; /* Assicura che il testo sia leggibile */
   max-width: 70%; /* Limita la larghezza per evitare che occupi troppo spazio */
+  max-height: 15%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Ombra più morbida e leggera */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Ombra più forte per il testo */
   text-align: center;
@@ -54,13 +55,15 @@ html {
   line-height: 1.5; /* Aumenta l'altezza della linea per una lettura più confortevole */
 }
 
+
+
 .carousel-caption:hover {
   background-color: rgba(0, 0, 0, 0.7);
   font-size: 1.2rem;
 }
 
 
-/*----------CSS NAVBAR per aumentare la grandezza del font quando si passa il cursore sopra*/
+/*----------CSS NAVBAR per aumentare la grandezza del font quando si passa il cursore sopra--------------------------------------*/
 @media (min-width: 992px) {
   .nav-link {
     transition: transform 0.2s ease; /* Transizione fluida */
@@ -133,7 +136,84 @@ html {
 
 /*------------------------------INIZIO CSS #SERVIZI---------------------------------------------------*/
 /*css per le icone nelle card della sezione servizi*/
-#servizi .icon {
+/* Sezione Servizi */
+/* Stile generale */
+
+
+/* Sezione Servizi */
+/* 
+#servizi {
+  background-color: #f8f9fa;
+}
+*/
+
+.flip-card {
+  background-color: transparent;
+  width: 380px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  border-radius: 5px;
+  background-color: #fdfdfd; /*colore delle card*/
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  border-radius: 5px;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+#titoloCardServizi {
+  color: #4867a1;
+}
+
+#desrizioneLongCardServizi {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+#desrizioneShortCardServizi{
+  color: #666;
+}
+
+
+
+.icon {
   width: 90px; /* Dimensione dell'icona */
   height: 90px;
   padding: 10px; /* Aggiungi un po' più di spazio interno */
@@ -145,188 +225,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#servizi .card-wrapper {
-  perspective: 1000px; /* Distanza della prospettiva per il flip */
-  margin-bottom: 30px;
-  margin-top: 40px;
-}
-
-/*quando c'è hover sulla card, aumenta anche la dimensione dell'icona*/
-#servizi .card:hover .icon {
-  background-color: #fdfcfc; /* Colore di sfondo più scuro al passaggio del mouse */
-  transform: scale(1.1); /* Leggera animazione di ingrandimento */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ombra più marcata al passaggio del mouse */
-}
-
-/*quando c'è hover sulla card, aumenta anche la dimensione del titolo sotto l'icona*/
-#servizi .card:hover .card-title {
-  transform: scale(1.1); /* Ingrandimento del titolo */
-}
-
-
-#servizi {
-  margin-top: 60px; /* Spazio sopra la sezione servizi */
-}
-
-#servizi .card-wrapper {
-    margin-bottom: 30px; /* Più spazio tra le card */
-    margin-top: 40px;
-}
-
-#servizi .card {
-  flex: 1 1 250px;
-  max-width: 600px;
-  min-height: 320px; /* Altezza minima della card */
-  padding: 25px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombra più morbida */
-  border-radius: 10px;
-  background-color: #fdfdfd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform-style: preserve-3d; /* Mantiene la struttura 3D */
-  transition: transform 0.6s ease-in-out; /* Transizione per il flip */
-}
-
-#servizi .card:hover {
-  transform: rotateY(180deg); /* Flip della card */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombra durante il flip */
-}
-
-#servizi .card-title {
-  color: #4867a1; /* Colore leggermente più scuro per il titolo */
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-
-
-#servizi .card hr {
-  width: 50%; /* Ridimensionamento per estetica */
-  margin: 15px auto;
-  border: 0;
-  border-top: 2px solid #d1cccc; /* Colore più tenue */
-}
-
-#servizi .icon {
   align-self: center;
   font-size: 2.5rem; /* Dimensione icona leggermente maggiore */
   color: #007bff;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
-
-#servizi .card-text {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 1rem;
-  color: #666; /* Colore del testo per una leggibilità ottimale */
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#servizi .card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  margin-top: 20px;
-}
-
-/* Responsive layout per schermi piccoli */
-@media (max-width: 576px) {
-  #servizi .card {
-      width: 90%; /* Card leggermente più stretta su schermi piccoli */
-      margin: 0 auto;
-  }
-
-  #servizi .card-title {
-    font-size: 1.1rem; /* Dimensione titolo leggermente ridotta su mobile */
-  }
-}
-
-
-
-#servizi .card-wrapper {
-  perspective: 1000px; /* Distanza della prospettiva per il flip */
-  margin-bottom: 30px;
-  margin-top: 40px;
-}
-
-
-/* Faccia anteriore della card (contenuto principale) */
-#servizi .card-body {
-  backface-visibility: hidden; /* Nasconde la faccia anteriore quando è girata */
-  transition: all 0.3s ease;
-}
-
-/* Faccia posteriore della card (descrizione) */
-#servizi .servizi-card-description {
-  display: none; /* La descrizione è nascosta per default */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  margin-top: 10px; /* Distanza tra il contenuto e la descrizione */
-  color: #555; /* Colore del testo per la descrizione, più morbido */
-  font-size: 14px; /* Font più grande per una migliore leggibilità */
-  line-height: 1.6; /* Maggiore spaziatura tra le righe per migliorare la leggibilità */
-  text-align: center; /* Centrato il testo */
-  padding: 0 20px; /* Aggiunta di un po' di spazio laterale per non toccare i bordi */
-  font-weight: 400; /* Peso del font normale */
-  backface-visibility: hidden; /* Nasconde la parte posteriore quando si gira */
-  transform: rotateY(180deg); /* Rende la descrizione visibile solo dopo il flip */
-}
-
-
-
-/* Nascondere la descrizione di default */
-#servizi .card .servizi-card-description {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* Mostra la descrizione quando la card è in hover */
-#servizi .card:hover .servizi-card-description {
-  opacity: 1;
-  visibility: visible;
-}
-
-
-/* Quando si passa sopra la card */
-#servizi .card:hover .servizi-card-description {
-  display: block;
-  opacity: 1; /* La descrizione diventa visibile */
-  visibility: visible;
-}
-
-/* Piccole modifiche per la visibilità e il layout */
-#servizi .card-title, #servizi .card-text {
-  transition: transform 0.3s ease;
-}
-
-/* Leggera animazione e ombra per la card */
-#servizi .card {
-  transform-style: preserve-3d; /* Mantiene la struttura 3D */
-  transition: transform 0.6s ease-in-out; /* Transizione per il flip */
-}
-
-#servizi .card:hover {
-  transform: rotateY(180deg); /* Flip della card */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Ombra più prominente */
-}
-
-
-
-
 
 
 
