@@ -21,16 +21,16 @@ import NextGenerationNetworks from "../assets/icons/networks.png";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 // Importiamo i loghi delle aziende per la sezione clienti
-import LogoWind from "../assets/logos/wind.png";
-import LogoTim from "../assets/logos/tim.png";
-import LogoVodafone from "../assets/logos/vodafone.png";
-import LogoZte from "../assets/logos/zte.png";
-import LogoEriccson from "../assets/logos/ericcson.png";
-import LogoHuawei from "../assets/logos/huawei.png";
-import LogoInwit from "../assets/logos/inwit.png";
-import LogoCellNex from "../assets/logos/cellnex.png";
-import Service from "../../public/service6.jpg";
-import Circle from "../../public/circle.jpg";
+import LogoWind from '../assets/logos/wind.png';
+import LogoTim from '../assets/logos/tim.png';
+import LogoVodafone from '../assets/logos/vodafone.png';
+import LogoZte from '../assets/logos/zte.png';
+import LogoEriccson from '../assets/logos/ericcson.png';
+import LogoHuawei from '../assets/logos/huawei.png';
+import LogoInwit from '../assets/logos/inwit.png';
+import LogoCellNex from '../assets/logos/cellnex.png';
+import Service from '../../public/service6.jpg'
+import Team from '../../public/work.jpg'
 
 //importiamo le foto della homepage che andranno nel carousel
 import HomePage1 from "../assets/images/HomePage1.jpg";
@@ -250,106 +250,128 @@ const Home = () => {
       </div>
       {/* ---------------FINE SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI --------------------------------------------------------------------------*/}
 
-      <div
-        style={{
-          backgroundImage: `url(${back})`, // Sostituisci con il tuo URL immagine
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed", // Effetto Parallax
-          backgroundRepeat: "no-repeat",
-          color: "#fff", // Colore del testo per renderlo visibile sull'immagine
-        }}
-      >
-        <div
-          id="chi-siamo"
-          className="section py-5"
-          style={{ backgroundColor: "rgba(255,255,255,0.9)" }}
-        >
-          <div className="container">
-            <div className="row" style={{ padding: "50px 0" }}>
-              <div
-                className="text-content"
-                style={{
-                  color: "#000",
-                  margin: "0 auto",
-                  lineHeight: "1.8",
-                }}
-              >
-                {/* Contenitore del Titolo */}
+      <div style={{
+            backgroundImage: `url(${Service})`,  // Sostituisci con il tuo URL immagine
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed",  // Effetto Parallax
+            backgroundRepeat: "no-repeat",
+            color: "#fff", // Colore del testo per renderlo visibile sull'immagine
+          }}>
+          <div id="chi-siamo" className="section py-5" style={{ backgroundColor: "rgba(255,255,255,0.9)" }}>
+            <div className="container">
+              <div className="row" style={{ padding: '50px 0' }}>
                 <div
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
+                  className="text-content"
                   style={{
-                    marginBottom: "30px",
-                    textAlign: "center",
+                    color: '#000',
+                    margin: '0 auto',
+                    lineHeight: '1.8',
                   }}
                 >
-                  <h2
+                  {/* Contenitore del Titolo */}
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
                     style={{
-                      color: "#174081",
-                      fontWeight: "bold",
-                      fontSize: "3rem",
-                      marginBottom: "20px",
-                      maxWidth: "1500px", // Più largo rispetto al testo sottostante
-                      margin: "0 auto", // Centra il titolo
-                      textAlign: "left", // Giustifica il testo del titolo
+                      marginBottom: '30px',
+                      textAlign: 'center',
                     }}
                   >
-                    Innovazione e connessione: la nostra missione è costruire il
-                    futuro con soluzioni tecnologiche all'avanguardia,
-                    sostenibili e su misura per le tue esigenze.
-                  </h2>
+                    <h2
+                      style={{
+                        color: '#174081',
+                        fontWeight: 'bold',
+                        fontSize: '3rem',
+                        marginBottom: '20px',
+                        maxWidth: '1500px', // Più largo rispetto al testo sottostante
+                        margin: '0 auto', // Centra il titolo
+                        textAlign: 'left', // Giustifica il testo del titolo
+                      }}
+                    >
+                      Innovazione e connessione: la nostra missione è costruire il futuro con
+                      soluzioni tecnologiche all'avanguardia, sostenibili e su misura per le
+                      tue esigenze.
+                    </h2>
+                  </div>
                 </div>
-
-                {/* Contenitore del Testo */}
+              </div>
+              <div className="row">
                 <div
+                className='col-md-7'
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                  data-aos-delay="200"
                   style={{
-                    maxWidth: "1000px", // Più stretto rispetto al titolo
-                    margin: "0 auto", // Centra il testo
+                    color: "#4D4D4D",
+                    lineHeight: "2.2",
+                    textAlign: "left",
+                    marginBottom:"30px"
                   }}
                 >
                   <p
                     style={{
-                      fontSize: "1.5rem", // Dimensione del testo interno
-                      fontWeight: "bold",
-                      color: "#4D4D4D",
-                      marginTop: "100px",
-                      marginBottom: "20px",
-                      textAlign: "justify",
+                      fontSize: '1.2rem', // Dimensione del testo interno
+                      color: '#4D4D4D',
+                      marginBottom: '40px',
+                      textAlign: 'left',
                     }}
                   >
                     MEDINET nasce come realtà specializzata nel settore delle
-                    telecomunicazioni, crescendo rapidamente grazie alla
-                    competenza e alla capacità di adattarsi a un settore in
-                    costante evoluzione. Fin dai suoi esordi, l'azienda ha
-                    ampliato la propria offerta, integrando servizi di
-                    progettazione e implementazione di infrastrutture per reti
-                    mobili e fisse, sistemi di trasmissione, soluzioni IoT, e
-                    progetti nel campo delle energie rinnovabili.
+                    telecomunicazioni, crescendo rapidamente grazie alla competenza e alla
+                    capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi
+                    esordi, l'azienda ha ampliato la propria offerta, integrando servizi di
+                    progettazione e implementazione di infrastrutture per reti mobili e
+                    fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle
+                    energie rinnovabili.
                   </p>
                   <p
                     style={{
-                      fontSize: "1.5rem",
-                      fontWeight: "bold",
-                      color: "#4D4D4D",
-                      textAlign: "justify",
+                      fontSize: '1.2rem',
+                      color: '#4D4D4D',
+                      textAlign: 'left',
                     }}
                   >
-                    La missione di MEDINET è fornire soluzioni tecnologiche
-                    avanzate e personalizzate che rispondano alle esigenze di
-                    connettività e trasformazione digitale dei suoi clienti. Ci
-                    impegniamo a garantire eccellenza operativa e sostenibilità,
-                    realizzando progetti che uniscono qualità, efficienza e
-                    innovazione.
+                    La missione di MEDINET è fornire soluzioni tecnologiche avanzate e
+                    personalizzate che rispondano alle esigenze di connettività e
+                    trasformazione digitale dei suoi clienti. Ci impegniamo a garantire
+                    eccellenza operativa e sostenibilità, realizzando progetti che uniscono
+                    qualità, efficienza e innovazione.
                   </p>
                 </div>
+                <div className="col-md-5 d-none d-md-block" >
+                  <div
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      overflow: "hidden", // Nasconde l'eccesso di immagine se necessario
+                      paddingRight:"30px",
+                      paddingLeft:"30px",
+                      paddingBottom:"30px",
+                      
+                    }}
+                  >
+                    <img
+                      src={Team} // Sostituisci con l'immagine giusta
+                      alt="Chi siamo"
+                      style={{
+                        width: "100%", // Occupa tutta la larghezza
+                        height: "100%", // Occupa tutta l'altezza
+                        objectFit: "cover", // Ritaglia l'immagine senza deformarla
+                        borderRadius: "10px",
+                        boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
+                      }}
+                      className="img-fluid"
+                    />
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
-        </div>
 
         {/* -----------------SEZIONE SERVIZI CON LE CARD------------------------------------------------------------------------- */}
 
