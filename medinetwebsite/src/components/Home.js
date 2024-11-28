@@ -18,6 +18,7 @@ import IotIndustry from "../assets/icons/industry.png";
 import SmartCity from "../assets/icons/smartCity.png";
 import NextGenerationNetworks from "../assets/icons/networks.png";
 
+
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 // Importiamo i loghi delle aziende per la sezione clienti
@@ -36,7 +37,7 @@ import Team from '../../public/work.jpg'
 import HomePage1 from "../assets/images/HomePage1.jpg";
 import HomePage2 from "../assets/images/HomePage2.jpg";
 import HomePage3 from "../assets/images/HomePage3.jpg";
-import back from "../assets/images/backGround.jpg";
+import backGroundImage from "../assets/images/backGround2.jpg";
 
 //importiamo la foto che va nella sezione Chi siamo
 import ChiSiamo from "../assets/images/chiSiamo.png";
@@ -251,12 +252,13 @@ const Home = () => {
       {/* ---------------FINE SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI --------------------------------------------------------------------------*/}
 
       <div style={{
-            backgroundImage: `url(${Service})`,  // Sostituisci con il tuo URL immagine
+            backgroundImage: `url(${backGroundImage})`,  // Sostituisci con il tuo URL immagine
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundAttachment: "fixed",  // Effetto Parallax
             backgroundRepeat: "no-repeat",
-            color: "#fff", // Colore del testo per renderlo visibile sull'immagine
+            color: "#fff",
+             // Colore del testo per renderlo visibile sull'immagine
           }}>
           <div id="chi-siamo" className="section py-5" style={{ backgroundColor: "rgba(255,255,255,0.9)" }}>
             <div className="container">
@@ -376,7 +378,23 @@ const Home = () => {
         {/* -----------------SEZIONE SERVIZI CON LE CARD------------------------------------------------------------------------- */}
 
         <section id="servizi" className="container py-5">
-          <h2 className="text-center mb-4">I Nostri Servizi</h2>
+        <h1 
+             style={{
+              textAlign: "center", // Centrare il testo orizzontalmente
+              color: "white", // Colore del testo bianco per contrastare sfondi scuri
+              textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)", // Ombra per evidenziare il testo
+              fontSize: "3rem", // Dimensione del testo per leggibilità
+              fontWeight: "bold", // Spessore del testo
+              letterSpacing: "2px", // Spaziatura tra lettere per un aspetto leggibile
+              padding: "20px", // Spaziatura interna per migliorare la separazione
+              lineHeight: "1.4", // Spaziatura tra righe per leggibilità
+              borderRadius: "15px", // Arrotondamento dei bordi per un aspetto più morbido
+              backgroundColor: "rgba(0, 0, 0, 0.1)", // Sfondo semi-trasparente dietro il testo
+              marginBottom: "20px", // Spaziatura inferiore
+            }}
+            >
+              Tutto quello che possiamo offrirti...
+            </h1>
           <div className="row">
             {serviziData.map((servizio) => (
               <div
