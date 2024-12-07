@@ -1,5 +1,6 @@
 {
   "name": "medinetwebsite",
+  "homepage": "https://SimranjitSingh98.github.io/sitoMedinet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +23,8 @@
   },
   "scripts": {
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "build": "webpack",
     "start": "webpack serve --open"
@@ -58,6 +61,7 @@
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.2.0",
     "html-webpack-plugin": "^5.6.2",
     "style-loader": "^4.0.0",
     "url-loader": "^4.1.1",
