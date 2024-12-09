@@ -251,46 +251,21 @@ const Home = () => {
       </div>
       {/* ---------------FINE SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI --------------------------------------------------------------------------*/}
 
-      <div style={{
-            backgroundImage: `url(${backGroundImage})`,  // Sostituisci con il tuo URL immagine
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed",  // Effetto Parallax
-            backgroundRepeat: "no-repeat",
-            color: "#fff",
-             // Colore del testo per renderlo visibile sull'immagine
-          }}>
-          <div id="chi-siamo" className="section py-5" style={{ backgroundColor: "rgba(255,255,255,0.9)" }}>
+
+
+      {/*----------------------------------------- INIZIO SEZIONE CHI SIAMO --------------------------------------------------------------------------*/}
+      <div className="background-div" style={{ backgroundImage: `url(${backGroundImage})` }}>
+        <div id="chi-siamo" className="section py-5 background-light">
             <div className="container">
-              <div className="row" style={{ padding: '50px 0' }}>
-                <div
-                  className="text-content"
-                  style={{
-                    color: '#000',
-                    margin: '0 auto',
-                    lineHeight: '1.8',
-                  }}
-                >
+              <div className="row-chiSiamo">
+              <div className="text-content">
                   {/* Contenitore del Titolo */}
                   <div
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    style={{
-                      marginBottom: '30px',
-                      textAlign: 'center',
-                    }}
+                  id="aos-fade-up-center"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
                   >
-                    <h2
-                      style={{
-                        color: '#174081',
-                        fontWeight: 'bold',
-                        fontSize: '3rem',
-                        marginBottom: '20px',
-                        maxWidth: '1500px', // Più largo rispetto al testo sottostante
-                        margin: '0 auto', // Centra il titolo
-                        textAlign: 'left', // Giustifica il testo del titolo
-                      }}
-                    >
+                   <h2 className="titolo-chiSiamo">
                       Innovazione e connessione: la nostra missione è costruire il futuro con
                       soluzioni tecnologiche all'avanguardia, sostenibili e su misura per le
                       tue esigenze.
@@ -299,25 +274,13 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div
-                className='col-md-7'
+                
+              <div
+                  className="col-md-7 custom-text-style"
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                  style={{
-                    color: "#4D4D4D",
-                    lineHeight: "2.2",
-                    textAlign: "left",
-                    marginBottom:"30px"
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: '1.2rem', // Dimensione del testo interno
-                      color: '#4D4D4D',
-                      marginBottom: '40px',
-                      textAlign: 'left',
-                    }}
-                  >
+              >
+                  <p className="paragrafo-chiSiamo">
                     MEDINET nasce come realtà specializzata nel settore delle
                     telecomunicazioni, crescendo rapidamente grazie alla competenza e alla
                     capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi
@@ -326,13 +289,7 @@ const Home = () => {
                     fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle
                     energie rinnovabili.
                   </p>
-                  <p
-                    style={{
-                      fontSize: '1.2rem',
-                      color: '#4D4D4D',
-                      textAlign: 'left',
-                    }}
-                  >
+                  <p className="paragrafo-chiSiamo">
                     La missione di MEDINET è fornire soluzioni tecnologiche avanzate e
                     personalizzate che rispondano alle esigenze di connettività e
                     trasformazione digitale dei suoi clienti. Ci impegniamo a garantire
@@ -341,58 +298,28 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="col-md-5 d-none d-md-block" >
-                  <div
-                    data-aos="fade-left"
-                    data-aos-duration="900"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      overflow: "hidden", // Nasconde l'eccesso di immagine se necessario
-                      paddingRight:"30px",
-                      paddingLeft:"30px",
-                      paddingBottom:"30px",
-                      
-                    }}
+                <div
+                      className="container-immagineChiSiamo "
+                      data-aos="fade-left"
+                      data-aos-duration="900"
                   >
                     <img
                       src={Team} // Sostituisci con l'immagine giusta
                       alt="Chi siamo"
-                      style={{
-                        width: "100%", // Occupa tutta la larghezza
-                        height: "100%", // Occupa tutta l'altezza
-                        objectFit: "cover", // Ritaglia l'immagine senza deformarla
-                        borderRadius: "10px",
-                        boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
-                      }}
-                      className="img-fluid"
-                    />
+                      className="immagine-ChiSiamo" // Applica la classe custom-img
+                  />
                   </div>
                 </div>
 
               </div>
             </div>
           </div>
+          { /* -----------------FINE SEZIONE CHI SIAMO --------------------------------------------------------------------------*/}
 
         {/* -----------------SEZIONE SERVIZI CON LE CARD------------------------------------------------------------------------- */}
 
         <section id="servizi" className="container py-5">
-        <h1 
-             style={{
-              textAlign: "center", // Centrare il testo orizzontalmente
-              color: "white", // Colore del testo bianco per contrastare sfondi scuri
-              textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)", // Ombra per evidenziare il testo
-              fontSize: "3rem", // Dimensione del testo per leggibilità
-              fontWeight: "bold", // Spessore del testo
-              letterSpacing: "2px", // Spaziatura tra lettere per un aspetto leggibile
-              padding: "20px", // Spaziatura interna per migliorare la separazione
-              lineHeight: "1.4", // Spaziatura tra righe per leggibilità
-              borderRadius: "15px", // Arrotondamento dei bordi per un aspetto più morbido
-              backgroundColor: "rgba(0, 0, 0, 0.1)", // Sfondo semi-trasparente dietro il testo
-              marginBottom: "20px", // Spaziatura inferiore
-            }}
-            >
+        <h1 className="titolo-Servizi">
               Tutto quello che possiamo offrirti...
             </h1>
           <div className="row">
@@ -432,27 +359,16 @@ const Home = () => {
 
         {/*------------------------------ INIZIO SEZIONE Clienti -------------------------------------------------------------------*/}
         <div
-          id="clienti"
-          className="clienti-wrapper"
-          style={{
-            backgroundColor: "rgba(255,255,255,0.9)",
-            padding: "100px 0" /* Spazio intorno alla sezione */,
-            marginTop: "0",
-          }}
+        id="clienti"
+        className="clienti-wrapper clienti-section" // Usa la classe CSS
         >
           <div className="container">
             <center>
-              <h2
-                style={{
-                  color: "#4D4D4D",
-                  fontWeight: "bold",
-                  fontSize: "2.5rem",
-                  marginBottom: "20px",
-                  margin: "0 auto", // Centra il titolo
-                }}
-                data-aos="fade-up"
-                data-aos-duration="2000"
-              >
+            <h2
+              className="titolo-clienti"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+          >
                 La Nostra Forza: La Fiducia dei Nostri Clienti
               </h2>
             </center>
@@ -529,15 +445,7 @@ const Home = () => {
       <div id="sedi" className="sedi-wrapper">
         <div className="container">
           <center>
-            <h2
-              style={{
-                color: "#174081",
-                fontWeight: "bold",
-                fontSize: "2.5rem",
-                marginBottom: "20px",
-                margin: "0 auto", // Centra il titolo
-              }}
-            >
+          <h2 className="titolo-sedi">
               Le nostre Sedi
             </h2>
           </center>

@@ -41,7 +41,6 @@ html {
 .carousel-caption {
   position: absolute;
   top: 45%; /* Posiziona la didascalia più in basso */
-
   background-color: rgba(0, 0, 0, 0.6); /* Pannello nero semitrasparente con maggiore opacità */
   padding: 30px; /* Maggiore spazio per migliorare la leggibilità */
   border-radius: 13px; /* Rende i bordi più arrotondati */
@@ -53,13 +52,40 @@ html {
   text-align: center;
   font-size: 1.2rem; /* Aumenta la dimensione del font per migliorare la leggibilità */
   line-height: 1.5; /* Aumenta l'altezza della linea per una lettura più confortevole */
+  overflow: hidden; /* Nasconde il testo che esce dai bordi */
+  word-wrap: break-word; /* Suddivide le parole troppo lunghe */
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    max-width: 97%; /* Aumenta la larghezza massima su schermi piccoli */
+    padding: 20px; /* Aumenta lo spazio interno per aumentare la dimensione complessiva */
+    font-size: 1rem; /* Mantiene la dimensione del font leggibile */
+    top: 35%; /* Aggiusta la posizione verticale per schermi piccoli */
+    height: auto; /* Imposta un'altezza automatica per adattarsi al contenuto */
+    min-height: 150px; /* Imposta un'altezza minima per la box */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-caption {
+    max-width: 95%; /* Ancora più largo su schermi molto piccoli */
+    padding: 15px; /* Ulteriore riduzione dello spazio */
+    font-size: 0.7rem; /* Riduce ulteriormente la dimensione del font */
+    top: 55%; /* Regola la posizione verticale */
+  }
 }
 
 
 
-.carousel-caption:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-  font-size: 1.2rem;
+@media (min-width: 769px) {
+  .carousel-caption:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 1.3rem;
+  }
+  .carousel-caption {
+    font-size: 1.3rem;
+  }
 }
 
 
@@ -514,4 +540,120 @@ html {
 .text-muted {
   color: #6c757d;
   line-height: 1.6;
+}
+
+
+/* SEZIONE CHI SIAMO */
+
+/*background sezione chi siamo*/
+.background-div {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #fff; /* Colore del testo */
+}
+
+.background-light {
+  background-color: rgba(255, 255, 255, 0.9); /* Sfondo semitrasparente bianco */
+}
+
+#row-chiSiamo{
+  padding: 50px 0; /* Padding sopra e sotto */
+}
+
+.text-content {
+  color: #000;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+#aos-fade-up-center {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.titolo-chiSiamo {
+  color: #174081; /* Colore del testo */
+  font-weight: bold; /* Grassetto */
+  font-size: 3rem; /* Dimensione del font */
+  margin-bottom: 20px; /* Spaziatura sotto */
+  max-width: 1500px; /* Larghezza massima */
+  margin: 0 auto; /* Centro orizzontale */
+  text-align: left; /* Allineamento a sinistra */
+}
+
+
+.testo-chiSiamo {
+  color: #4D4D4D;  /* Colore del testo */
+  line-height: 2.2;  /* Altezza della riga */
+  text-align: left;  /* Allineamento del testo */
+  margin-bottom: 30px;  /* Spaziatura inferiore */
+}
+
+.paragrafo-chiSiamo {
+  font-size: 1.2rem; /* Dimensione del testo */
+  color: #4D4D4D; /* Colore del testo */
+  margin-bottom: 40px; /* Spaziatura inferiore */
+  text-align: left; /* Allineamento del testo */
+  margin-top:10px;
+}
+
+.container-immagineChiSiamo {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Nasconde l'eccesso di immagine se necessario */
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.immagine-ChiSiamo {
+  width: 100%; /* Occupa tutta la larghezza */
+  height: 100%; /* Occupa tutta l'altezza */
+  object-fit: cover; /* Ritaglia l'immagine senza deformarla */
+  border-radius: 10px; /* Bordo arrotondato */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Ombra */
+}
+
+/* SEZIONE SERVIZI */
+/* styles.css */
+.titolo-Servizi {
+  text-align: center; /* Centra il testo orizzontalmente */
+  color: white; /* Colore del testo bianco */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Ombra per evidenziare il testo */
+  font-size: 3rem; /* Dimensione del testo */
+  font-weight: bold; /* Spessore del testo */
+  letter-spacing: 2px; /* Spaziatura tra lettere */
+  padding: 20px; /* Spaziatura interna */
+  line-height: 1.4; /* Spaziatura tra le righe */
+  border-radius: 15px; /* Arrotondamento dei bordi */
+  background-color: rgba(0, 0, 0, 0.1); /* Sfondo semi-trasparente */
+  margin-bottom: 20px; /* Spaziatura inferiore */
+}
+
+/* SEZIONE CLIENTI */
+.clienti-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Colore di sfondo */
+  padding: 100px 0; /* Spaziatura intorno alla sezione */
+  margin-top: 0; /* Imposta il margine superiore a 0 */
+}
+
+.titolo-clienti{
+  color: #4D4D4D; /* Colore del testo */
+  font-weight: bold; /* Spessore del testo */
+  font-size: 2.5rem; /* Dimensione del font */
+  margin-bottom: 20px; /* Spaziatura inferiore */
+  margin: 0 auto; /* Centra il titolo orizzontalmente */
+}
+
+/* SEZIONE SEDI  */
+.titolo-sedi{
+  color: #174081; /* Colore del testo */
+  font-weight: bold; /* Grassetto */
+  font-size: 2.5rem; /* Dimensione del testo */
+  margin-bottom: 20px; /* Spaziatura inferiore */
+  margin: 0 auto; /* Centra il titolo orizzontalmente */
 }
