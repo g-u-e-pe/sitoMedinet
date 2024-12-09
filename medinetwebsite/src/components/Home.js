@@ -74,7 +74,7 @@ const Home = () => {
     },
     {
       id: 4,
-      title: "IoT IN AMBITO TECLO E INDUSTRY",
+      title: "IoT IN AMBITO TELCO E INDUSTRY",
       shortDescription: "  Tecnologie IoT per la gestione e il monitoraggio",
       longDescription:
         "MEDINET ha sviluppato soluzioni IoT, tra cui il sistema S.A.C.A.P. per il monitoraggio delle stazioni radio base e un’applicazione per il controllo dell’utilizzo di dispositivi di protezione individuale (DPI) tramite smartphone.",
