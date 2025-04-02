@@ -17,6 +17,7 @@ const App = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+    
   }, []);
 
   return (

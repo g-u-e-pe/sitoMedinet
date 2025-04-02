@@ -665,3 +665,77 @@ html {
   margin-bottom: 20px; /* Spaziatura inferiore */
   margin: 0 auto; /* Centra il titolo orizzontalmente */
 }
+
+
+
+
+
+
+
+
+/* SENZIONE PROGETTI */
+#progetti {
+  max-width: 800px; /* Imposta una larghezza massima per il contenitore */
+  margin: 0 auto;   /* Centra orizzontalmente l'elemento */
+  padding: 20px;    /* Aggiunge spazio interno per evitare che il contenuto tocchi i bordi */
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#progetti #accordion {
+  width: 100%; /* La larghezza dell'accordion copre il 100% del suo contenitore */
+  margin-top: 20px; /* Aggiunge uno spazio sopra l'accordion */
+}
+
+#progetti .card {
+  margin-bottom: 15px; /* Distanza tra le card */
+  background-color: #fff; /* Impostiamo il colore di sfondo di default per le card */
+  border: 1px solid #ddd; /* Bordo grigio per la card */
+  border-radius: 10px; /* Aggiunge angoli arrotondati per un aspetto più morbido */
+}
+
+#progetti .card-header {
+  background-color: #ffffff; /* Colore di sfondo per l'intestazione della card */
+  border: 1px solid #ddd; /* Bordo grigio per l'intestazione della card */
+  border-top-left-radius: 10px; /* Angolo arrotondato per l'intestazione */
+  border-top-right-radius: 10px; /* Angolo arrotondato per l'intestazione */
+  padding: 10px; /* Padding dell'intestazione */
+}
+
+#progetti .card-body {
+  padding: 15px; /* Padding della card body */
+  color: #333; /* Colore del testo */
+}
+
+#progetti .card-header .btn {
+  text-decoration: none; /* Rimuove la sottolineatura dai bottoni */
+  color: #174081; /* Colore blu per il testo del bottone */
+  font-weight: bold; /* Aggiunge un po' di spessore al font */
+}
+
+#progetti .card-header .btn:hover {
+  color: #0056b3; /* Colore più scuro quando si passa sopra con il mouse */
+}
+
+#progetti .card-body p {
+  font-size: 14px; /* Imposta una dimensione del font più piccola per il contenuto della card */
+}
+
+/* Colore di sfondo per la card quando è chiusa */
+#progetti .card .collapse {
+  background-color: rgb(255, 255, 255); /* Colore di sfondo trasparente quando la card è chiusa */
+  border-top: 1px solid #ddd; /* Bordo superiore per separare la descrizione dal titolo */
+}
+
+/* Se vuoi cambiare il colore della card anche quando la card è espansa */
+#progetti .card .collapse.show {
+  background-color: rgba(228, 241, 251, 0.6); /* Colore di sfondo quando la card è espansa */
+}
+
+.titolo-progetti{
+  color: #174081; /* Colore del testo */
+  font-weight: bold; /* Grassetto */
+  font-size: 2.5rem; /* Dimensione del testo */
+  padding-bottom: 40px; /* Spaziatura inferiore */
+  margin: 0 auto; /* Centra il titolo orizzontalmente */
+}
