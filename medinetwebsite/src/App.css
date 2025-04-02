@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/public/fonts/Kantumruy_Pro/static/KantumruyPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Aggiungi padding-top alle sezioni per tenere conto della navbar fissa */
 html {
   scroll-padding-top: 70px; /* Altezza della navbar, puoi modificare questo valore se necessario */
 }
+
 
 /* Ottimizzazione della visualizzazione mobile */
 @media (max-width: 768px) {

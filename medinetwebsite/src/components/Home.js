@@ -39,6 +39,8 @@ import HomePage2 from "../assets/images/HomePage2.jpg";
 import HomePage3 from "../assets/images/HomePage3.jpg";
 import backGroundImage from "../assets/images/backGround2.jpg";
 
+
+
 //importiamo la foto che va nella sezione Chi siamo
 import ChiSiamo from "../assets/images/chiSiamo.png";
 
@@ -218,8 +220,8 @@ const Home = () => {
                 className="carousel-caption d-md-block d-flex flex-column align-items-center justify-content-center"
                 style={{ height: "15%" }}
               >
-                <h5 className="text-center">{slide.title}</h5>
-                <p className="text-center">{slide.description}</p>
+                <h5 className="text-center" style={{fontFamily:'MyCustomFont'}}><b>{slide.title}</b></h5>
+                <p className="text-center" style={{fontFamily:'MyCustomFont'}}>{slide.description}</p>
               </div>
             </div>
           ))}
@@ -258,15 +260,15 @@ const Home = () => {
         <div id="chi-siamo" className="section py-5 background-light">
             <div className="container">
               <div className="row-chiSiamo">
-              <div className="text-content">
+              <div className="text-content px-0">
                   {/* Contenitore del Titolo */}
                   <div
                   id="aos-fade-up-center"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                   >
-                   <h2 className="titolo-chiSiamo">
-                      Innovazione e connessione: la nostra missione è costruire il futuro con
+                   <h2 className="titolo-chiSiamo" style={{fontFamily:'MyCustomFont', fontSize:"35px", textAlign: "left"}}>
+                      Innovazione e Connessione: la nostra missione è costruire il futuro con
                       soluzioni tecnologiche all'avanguardia, sostenibili e su misura per le
                       tue esigenze.
                     </h2>
@@ -280,7 +282,18 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-duration="1000"
               >
-                  <p className="paragrafo-chiSiamo">
+                  <p
+                    className="paragrafo-chiSiamo p-5 mt-0"
+                    style={{
+                      fontFamily: 'MyCustomFont',
+                      fontSize: '20px',
+                      backgroundColor: 'white',
+                      color: 'black', // Imposta il colore del testo su nero
+                      borderRadius: '10px', // Rende i bordi rotondi
+                      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)', // Aggiunge un'ombra dietro il paragrafo
+                      padding: '20px', // Aggiunge uno spazio interno
+                    }}
+                  >
                     MEDINET nasce come realtà specializzata nel settore delle
                     telecomunicazioni, crescendo rapidamente grazie alla competenza e alla
                     capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi
@@ -289,12 +302,22 @@ const Home = () => {
                     fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle
                     energie rinnovabili.
                   </p>
-                  <p className="paragrafo-chiSiamo">
-                    La missione di MEDINET è fornire soluzioni tecnologiche avanzate e
-                    personalizzate che rispondano alle esigenze di connettività e
-                    trasformazione digitale dei suoi clienti. Ci impegniamo a garantire
-                    eccellenza operativa e sostenibilità, realizzando progetti che uniscono
-                    qualità, efficienza e innovazione.
+                  <p
+                    className="paragrafo-chiSiamo p-5 mt-0"
+                    style={{
+                      fontFamily: 'MyCustomFont',
+                      fontSize: '20px',
+                      backgroundColor: 'white',
+                      color: 'black', // Imposta il colore del testo su nero
+                      borderRadius: '10px', // Rende i bordi rotondi
+                      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)', // Aggiunge un'ombra dietro il paragrafo
+                      padding: '20px', // Aggiunge uno spazio interno
+                    }}
+                  >
+                    MEDINET è impegnata in numerosi progetti attivi che spaziano dalla connettività avanzata all'innovazione digitale, 
+                    con un forte focus sulla ricerca e sviluppo. Grazie a un approccio tecnologico all'avanguardia, lavoriamo per offrire 
+                    soluzioni personalizzate che rispondano alle esigenze di un mercato in continua evoluzione. 
+                    Scopri di più sui nostri progetti attivi nella sezione dedicata.
                   </p>
                 </div>
                 <div className="col-md-5 d-none d-md-block" >

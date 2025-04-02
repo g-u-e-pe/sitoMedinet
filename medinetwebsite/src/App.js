@@ -3,6 +3,8 @@ import NavbarDef from './components/NavbarDef';
 import Home from './components/Home'; // Assicurati di avere questo import corretto
 import Footer from './components/Footer';
 
+
+
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
 

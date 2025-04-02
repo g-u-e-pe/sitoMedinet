@@ -164,7 +164,7 @@ function NavbarDef({scrolled}) {
             },
           }}
         >
-          {["Home", "Chi siamo", "Servizi", "Clienti", "Sedi", "Contatti"].map(
+          {["Home", "Chi siamo", "Servizi", "Clienti", "Progetti", "Sedi"].map(
             (label, index) => (
               <Tab
                 key={index}
