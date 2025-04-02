@@ -18,26 +18,30 @@ import IotIndustry from "../assets/icons/industry.png";
 import SmartCity from "../assets/icons/smartCity.png";
 import NextGenerationNetworks from "../assets/icons/networks.png";
 
-
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row, Collapse } from "react-bootstrap";
 
 // Importiamo i loghi delle aziende per la sezione clienti
-import LogoWind from '../assets/logos/wind.png';
-import LogoTim from '../assets/logos/tim.png';
-import LogoVodafone from '../assets/logos/vodafone.png';
-import LogoZte from '../assets/logos/zte.png';
-import LogoEriccson from '../assets/logos/ericcson.png';
-import LogoHuawei from '../assets/logos/huawei.png';
-import LogoInwit from '../assets/logos/inwit.png';
-import LogoCellNex from '../assets/logos/cellnex.png';
-import Service from '../../public/service6.jpg'
-import Team from '../../public/work.jpg'
+import LogoWind from "../assets/logos/wind.png";
+import LogoTim from "../assets/logos/tim.png";
+import LogoVodafone from "../assets/logos/vodafone.png";
+import LogoZte from "../assets/logos/zte.png";
+import LogoEriccson from "../assets/logos/ericcson.png";
+import LogoHuawei from "../assets/logos/huawei.png";
+import LogoInwit from "../assets/logos/inwit.png";
+import LogoCellNex from "../assets/logos/cellnex.png";
+import Service from "../../public/service6.jpg";
+import Team from "../../public/work.jpg";
 
 //importiamo le foto della homepage che andranno nel carousel
 import HomePage1 from "../assets/images/HomePage1.jpg";
 import HomePage2 from "../assets/images/HomePage2.jpg";
 import HomePage3 from "../assets/images/HomePage3.jpg";
 import backGroundImage from "../assets/images/backGround2.jpg";
+
+//importiamo le foto dei progetti
+import imageProject1 from "../assets/images/project1.jpg";
+import imageProject2 from "../assets/images/project1.jpg";
+import imageProject3 from "../assets/images/project1.jpg";
 
 //importiamo la foto che va nella sezione Chi siamo
 import ChiSiamo from "../assets/images/chiSiamo.png";
@@ -98,25 +102,41 @@ const Home = () => {
     },
   ];
 
-
+  //dati che servono per la sezione PROGETTI
   const progettiData = [
     {
       id: 1,
-      image: "link-alla-tua-immagine-1.jpg",
-      title: "Progetto 1",
-      description: "Breve descrizione del progetto 1.",
-      link: "#"
+      image: imageProject1,
+      title: "Predihealth",
+      shortDescription:
+        "Gestione insufficienza cardiaca tramite IoT, telemedicina e modelli predittivi",
+      longDescription:
+        "Il progetto di ricerca PrediHealth mira a migliorare la gestione dell'insufficienza cardiaca cronica attraverso l'integrazione di telemedicina, soluzioni di salute mobile e analisi predittive. Utilizzando una piattaforma IoT basata sul web e modelli predittivi basati sull'IA, supporta il monitoraggio continuo e il processo decisionale clinico.",
+      link: "https://docenti.unisa.it/020007/en/research/projects?progetto=62586",
     },
     {
       id: 2,
-      image: "link-alla-tua-immagine-2.jpg",
-      title: "Progetto 2",
-      description: "Breve descrizione del progetto 2.",
-      link: "#"
-    }
+      image: imageProject2,
+      title: "Respiraction",
+      shortDescription:
+        "Gestione insufficienza cardiaca tramite IoT, telemedicina e modelli predittivi",
+      longDescription:
+        "Il progetto di ricerca PrediHealth mira a migliorare la gestione dell'insufficienza cardiaca cronica attraverso l'integrazione di telemedicina, soluzioni di salute mobile e analisi predittive. Utilizzando una piattaforma IoT basata sul web e modelli predittivi basati sull'IA, supporta il monitoraggio continuo e il processo decisionale clinico.",
+      link: "#",
+    },
+    /*
+    {
+      id: 3,
+      image: imageProject3,
+      title: "Progetto 3",
+      shortDescription:
+        "Gestione insufficienza cardiaca tramite IoT, telemedicina e modelli predittivi",
+      longDescription:
+        "Il progetto di ricerca PrediHealth mira a migliorare la gestione dell'insufficienza cardiaca cronica attraverso l'integrazione di telemedicina, soluzioni di salute mobile e analisi predittive. Utilizzando una piattaforma IoT basata sul web e modelli predittivi basati sull'IA, supporta il monitoraggio continuo e il processo decisionale clinico.",
+      link: "#",
+    },
+    */
   ];
-
-
 
   const slides = [
     {
@@ -139,8 +159,18 @@ const Home = () => {
     },
   ];
 
-  //Informazioni delle sedi
+  //Codice che serve nella sezione Progetti per gestire il Collapse
+  const [activeCollapse, setActiveCollapse] = useState("collapseOne");
 
+  const handleCollapseToggle = (targetId) => {
+    if (activeCollapse === targetId) {
+      setActiveCollapse(""); // Nascondi se già aperto
+    } else {
+      setActiveCollapse(targetId); // Mostra il target selezionato
+    }
+  };
+
+  //Informazioni delle sedi
   //position_potenza corrisponde alle coordinate di potenza che vengono visualizzate nella mappa (utili perchè rappresentano il centro tra campania e basilicata)
   const position_potenza = [40.646040469819354, 15.809515347484554];
   const sedeData = [
@@ -271,77 +301,78 @@ const Home = () => {
       </div>
       {/* ---------------FINE SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI --------------------------------------------------------------------------*/}
 
-
-
       {/*----------------------------------------- INIZIO SEZIONE CHI SIAMO --------------------------------------------------------------------------*/}
-      <div className="background-div" style={{ backgroundImage: `url(${backGroundImage})` }}>
+      <div
+        className="background-div"
+        style={{ backgroundImage: `url(${backGroundImage})` }}
+      >
         <div id="chi-siamo" className="section py-5 background-light">
-            <div className="container">
-              <div className="row-chiSiamo">
+          <div className="container">
+            <div className="row-chiSiamo">
               <div className="text-content">
-                  {/* Contenitore del Titolo */}
-                  <div
+                {/* Contenitore del Titolo */}
+                <div
                   id="aos-fade-up-center"
                   data-aos="fade-up"
                   data-aos-duration="1000"
-                  >
-                   <h2 className="titolo-chiSiamo">
-                      Innovazione e connessione: la nostra missione è costruire il futuro con
-                      soluzioni tecnologiche all'avanguardia, sostenibili e su misura per le
-                      tue esigenze.
-                    </h2>
-                  </div>
+                >
+                  <h2 className="titolo-chiSiamo">
+                    Innovazione e connessione: la nostra missione è costruire il
+                    futuro con soluzioni tecnologiche all'avanguardia,
+                    sostenibili e su misura per le tue esigenze.
+                  </h2>
                 </div>
               </div>
-              <div className="row">
-                
+            </div>
+            <div className="row">
               <div
-                  className="col-md-7 custom-text-style"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
+                className="col-md-7 custom-text-style"
+                data-aos="fade-up"
+                data-aos-duration="1000"
               >
-                  <p className="paragrafo-chiSiamo">
-                    MEDINET nasce come realtà specializzata nel settore delle
-                    telecomunicazioni, crescendo rapidamente grazie alla competenza e alla
-                    capacità di adattarsi a un settore in costante evoluzione. Fin dai suoi
-                    esordi, l'azienda ha ampliato la propria offerta, integrando servizi di
-                    progettazione e implementazione di infrastrutture per reti mobili e
-                    fisse, sistemi di trasmissione, soluzioni IoT, e progetti nel campo delle
-                    energie rinnovabili.
-                  </p>
-                  <p className="paragrafo-chiSiamo">
-                    La missione di MEDINET è fornire soluzioni tecnologiche avanzate e
-                    personalizzate che rispondano alle esigenze di connettività e
-                    trasformazione digitale dei suoi clienti. Ci impegniamo a garantire
-                    eccellenza operativa e sostenibilità, realizzando progetti che uniscono
-                    qualità, efficienza e innovazione.
-                  </p>
-                </div>
-                <div className="col-md-5 d-none d-md-block" >
+                <p className="paragrafo-chiSiamo">
+                  MEDINET nasce come realtà specializzata nel settore delle
+                  telecomunicazioni, crescendo rapidamente grazie alla
+                  competenza e alla capacità di adattarsi a un settore in
+                  costante evoluzione. Fin dai suoi esordi, l'azienda ha
+                  ampliato la propria offerta, integrando servizi di
+                  progettazione e implementazione di infrastrutture per reti
+                  mobili e fisse, sistemi di trasmissione, soluzioni IoT, e
+                  progetti nel campo delle energie rinnovabili.
+                </p>
+                <p className="paragrafo-chiSiamo">
+                  La missione di MEDINET è fornire soluzioni tecnologiche
+                  avanzate e personalizzate che rispondano alle esigenze di
+                  connettività e trasformazione digitale dei suoi clienti. Ci
+                  impegniamo a garantire eccellenza operativa e sostenibilità,
+                  realizzando progetti che uniscono qualità, efficienza e
+                  innovazione.
+                </p>
+              </div>
+              <div className="col-md-5 d-none d-md-block">
                 <div
-                      className="container-immagineChiSiamo "
-                      data-aos="fade-left"
-                      data-aos-duration="900"
-                  >
-                    <img
-                      src={Team} // Sostituisci con l'immagine giusta
-                      alt="Chi siamo"
-                      className="immagine-ChiSiamo" // Applica la classe custom-img
+                  className="container-immagineChiSiamo "
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                >
+                  <img
+                    src={Team} // Sostituisci con l'immagine giusta
+                    alt="Chi siamo"
+                    className="immagine-ChiSiamo" // Applica la classe custom-img
                   />
-                  </div>
                 </div>
-
               </div>
             </div>
           </div>
-          { /* -----------------FINE SEZIONE CHI SIAMO --------------------------------------------------------------------------*/}
+        </div>
+        {/* -----------------FINE SEZIONE CHI SIAMO --------------------------------------------------------------------------*/}
 
         {/* -----------------SEZIONE SERVIZI CON LE CARD------------------------------------------------------------------------- */}
 
         <section id="servizi" className="container py-5">
-        <h1 className="titolo-Servizi">
-              Tutto quello che possiamo offrirti...
-            </h1>
+          <h1 className="titolo-Servizi">
+            Tutto quello che possiamo offrirti...
+          </h1>
           <div className="row">
             {serviziData.map((servizio) => (
               <div
@@ -377,51 +408,18 @@ const Home = () => {
 
         {/*--------------------- FINE SEZIONE "SERVIZI"---------------------------------------------------------------------------------- */}
 
-
-
- {/*--------------------- INIZIO SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
-
-
- 
-<section id="progetti" className="container py-5">
-      <h1 className="titolo-progetti">I nostri progetti</h1>
-      <div className="row">
-        {progettiData.map((progetto) => (
-          <div key={progetto.id} className="col-md-4 d-flex justify-content-center mb-4">
-            <div className="card" style={{ width: "18rem" }}>
-              <img src={progetto.image} className="card-img-top" alt={progetto.title} />
-              <div className="card-body text-center">
-                <h5 className="card-title">{progetto.title}</h5>
-                <p className="card-text">{progetto.description}</p>
-                <a href={progetto.link} className="btn btn-primary">Scopri di più</a>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-
-
-
-
-
-
-{/*--------------------- FINE SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
-
-
-
         {/*------------------------------ INIZIO SEZIONE Clienti -------------------------------------------------------------------*/}
         <div
-        id="clienti"
-        className="clienti-wrapper clienti-section" // Usa la classe CSS
+          id="clienti"
+          className="clienti-wrapper clienti-section" // Usa la classe CSS
         >
           <div className="container">
             <center>
-            <h2
-              className="titolo-clienti"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-          >
+              <h2
+                className="titolo-clienti"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
                 La Nostra Forza: La Fiducia dei Nostri Clienti
               </h2>
             </center>
@@ -494,13 +492,75 @@ const Home = () => {
         {/*------------------------------ FINE SEZIONE Clienti------------------------------------------------------------------ */}
       </div>
 
+
+
+
+
+      {/*--------------------- INIZIO SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
+
+      <div id="progetti" className="progetti-wrapper">
+        <div className="container">
+          <center>
+            <h2 className="titolo-progetti">I nostri progetti</h2>
+          </center>
+
+          <div id="accordion">
+            {progettiData.map((project) => (
+              <div className="card" key={project.id}>
+                <div className="card-header" id={`heading${project.id}`}>
+                  <h5 className="mb-0">
+                    <button
+                      className="btn btn-link"
+                      onClick={() =>
+                        handleCollapseToggle(`collapse${project.id}`)
+                      }
+                      aria-expanded={activeCollapse === `collapse${project.id}`}
+                      aria-controls={`collapse${project.id}`}
+                    >
+                      {project.title}
+                    </button>
+                  </h5>
+                </div>
+
+                <div
+                  id={`collapse${project.id}`}
+                  className={`collapse ${
+                    activeCollapse === `collapse${project.id}` ? "show" : ""
+                  }`}
+                  aria-labelledby={`heading${project.id}`}
+                  data-parent="#accordion"
+                >
+                  <div className="card-body">
+                    <p>
+                      <strong>Obiettivo:</strong>{" "}
+                      {project.shortDescription}
+                    </p>
+                    <p>
+                      <strong>Descrizione:</strong>{" "}
+                      {project.longDescription}
+                    </p>
+                    <p>
+                      <a href={project.link}>Link al progetto</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/*--------------------- FINE SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
+
+
+
+
+
       {/*------------------------------ INIZIO SEZIONE SEDI--------------------------------------------------------------------------- */}
       <div id="sedi" className="sedi-wrapper">
         <div className="container">
           <center>
-          <h2 className="titolo-sedi">
-              Le nostre Sedi
-            </h2>
+            <h2 className="titolo-sedi">Le nostre Sedi</h2>
           </center>
 
           <div className="row justify-content-center">
