@@ -98,6 +98,26 @@ const Home = () => {
     },
   ];
 
+
+  const progettiData = [
+    {
+      id: 1,
+      image: "link-alla-tua-immagine-1.jpg",
+      title: "Progetto 1",
+      description: "Breve descrizione del progetto 1.",
+      link: "#"
+    },
+    {
+      id: 2,
+      image: "link-alla-tua-immagine-2.jpg",
+      title: "Progetto 2",
+      description: "Breve descrizione del progetto 2.",
+      link: "#"
+    }
+  ];
+
+
+
   const slides = [
     {
       image: HomePage1,
@@ -356,6 +376,39 @@ const Home = () => {
         </section>
 
         {/*--------------------- FINE SEZIONE "SERVIZI"---------------------------------------------------------------------------------- */}
+
+
+
+ {/*--------------------- INIZIO SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
+
+
+ 
+<section id="progetti" className="container py-5">
+      <h1 className="titolo-progetti">I nostri progetti</h1>
+      <div className="row">
+        {progettiData.map((progetto) => (
+          <div key={progetto.id} className="col-md-4 d-flex justify-content-center mb-4">
+            <div className="card" style={{ width: "18rem" }}>
+              <img src={progetto.image} className="card-img-top" alt={progetto.title} />
+              <div className="card-body text-center">
+                <h5 className="card-title">{progetto.title}</h5>
+                <p className="card-text">{progetto.description}</p>
+                <a href={progetto.link} className="btn btn-primary">Scopri di più</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+
+
+
+
+
+{/*--------------------- FINE SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
+
+
 
         {/*------------------------------ INIZIO SEZIONE Clienti -------------------------------------------------------------------*/}
         <div
