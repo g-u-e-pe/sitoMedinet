@@ -3,9 +3,9 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import MediNet from '../../public/logoMedinetremove.png'
-import MediNetOmbra from '../../public/logoMedinetOmbraRemove.png'
-import text from '../../public/MedinetTextRemove.png'
+import MediNet from '../assets/images/logoMedinetremove.png'
+import MediNetOmbra from '../assets/images/logoMedinetOmbraRemove.png'
+import text from '../assets/images/MedinetTextRemove.png'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useMediaQuery } from "@mui/material"; // Importa useMediaQuery
@@ -21,7 +21,7 @@ function NavbarDef({scrolled}) {
     const [activeTab, setActiveTab] = useState(0);
     const [progress, setProgress] = useState(50); // Stato per il progresso
     const [open, setOpen] = React.useState(false);
-    const sectionIds = ["home", "chi-siamo", "servizi", "clienti", "sedi", "contatti"];
+    const sectionIds = ["home", "chi-siamo", "servizi", "clienti", "progetti", "sedi"];
     const isSmallScreen = useMediaQuery("(max-width: 600px)"); // Verifica se lo schermo è xs o sm
 
   useEffect(() => {

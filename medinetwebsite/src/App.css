@@ -641,6 +641,14 @@ html {
   background-color: rgba(0, 0, 0, 0.1); /* Sfondo semi-trasparente */
   margin-bottom: 20px; /* Spaziatura inferiore */
 }
+.titolo-Progetti {
+  color: #174081; /* Colore del testo */
+  font-weight: bold; /* Grassetto */
+  font-size: 2.5rem; /* Dimensione del testo */
+  margin-bottom: 20px; /* Spaziatura inferiore */
+  margin: 0 auto; /* Centra il titolo orizzontalmente */
+  text-align: center;
+}
 
 /* SEZIONE CLIENTI */
 .clienti-section {

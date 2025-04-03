@@ -17,8 +17,14 @@ import EnergiaEMobilita from "../assets/icons/energiaMobilita.png";
 import IotIndustry from "../assets/icons/industry.png";
 import SmartCity from "../assets/icons/smartCity.png";
 import NextGenerationNetworks from "../assets/icons/networks.png";
+import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 
-import { Card, Col, Container, Row, Collapse } from "react-bootstrap";
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 // Importiamo i loghi delle aziende per la sezione clienti
 import LogoWind from "../assets/logos/wind.png";
@@ -29,8 +35,9 @@ import LogoEriccson from "../assets/logos/ericcson.png";
 import LogoHuawei from "../assets/logos/huawei.png";
 import LogoInwit from "../assets/logos/inwit.png";
 import LogoCellNex from "../assets/logos/cellnex.png";
-import Service from "../../public/service6.jpg";
-import Team from "../../public/work.jpg";
+import Team from "../assets/images/work.jpg";
+import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
+import AirIcon from '@mui/icons-material/Air';
 
 //importiamo le foto della homepage che andranno nel carousel
 import HomePage1 from "../assets/images/HomePage1.jpg";
@@ -232,7 +239,8 @@ const Home = () => {
   };
 
   return (
-    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style={{fontFamily: 'MyCustomFont',
+      fontSize: '20px'}}>
       {/*----------------------------------------- INIZIO SEZIONE HOMEPAGE CON CAROUSEL IMMAGINI ------------------*/}
       <div
         id="home"
@@ -316,10 +324,8 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-duration="1000"
                   >
-                   <h2 className="titolo-chiSiamo" style={{fontFamily:'MyCustomFont', fontSize:"35px", textAlign: "left"}}>
-                      Innovazione e Connessione: la nostra missione è costruire il futuro con
-                      soluzioni tecnologiche all'avanguardia, sostenibili e su misura per le
-                      tue esigenze.
+                   <h2 className="titolo-chiSiamo" style={{fontFamily:'MyCustomFont', fontSize:"35px", textAlign: "center"}}>
+                      Innovazione e Connessione<br />La nostra missione è costruire il Futuro
                     </h2>
                   </div>
                 </div>
@@ -366,7 +372,7 @@ const Home = () => {
                     MEDINET è impegnata in numerosi progetti attivi che spaziano dalla connettività avanzata all'innovazione digitale, 
                     con un forte focus sulla ricerca e sviluppo. Grazie a un approccio tecnologico all'avanguardia, lavoriamo per offrire 
                     soluzioni personalizzate che rispondano alle esigenze di un mercato in continua evoluzione. 
-                    Scopri di più sui nostri progetti attivi nella sezione dedicata.
+                    Scopri di più sui nostri <a href="#progetti" style={{ color: '#174081', fontWeight: 'bold', textDecoration: 'none' }}>progetti attivi</a>.
                   </p>
                 </div>
                 <div className="col-md-5 d-none d-md-block" >
@@ -413,6 +419,8 @@ const Home = () => {
                       <p id="desrizioneShortCardServizi">
                         {servizio.shortDescription}
                       </p>
+                      <FlipCameraAndroidIcon sx={{ color: "#4867a1"}} className="mt-1"></FlipCameraAndroidIcon>
+
                     </div>
                     <div className="flip-card-back d-flex flex-column align-items-center justify-content-center p-3">
                       <p id="desrizioneLongCardServizi">
@@ -518,8 +526,7 @@ const Home = () => {
 
       {/*--------------------- INIZIO SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
 
-      <div id="progetti" className="progetti-wrapper">
-        <div className="container">
+      {/*<div id="progetti" className="progetti-wrapper">
           <center>
             <h2 className="titolo-progetti">I nostri progetti</h2>
           </center>
@@ -567,7 +574,75 @@ const Home = () => {
               </div>
             ))}
           </div>
-        </div>
+      </div>*/}
+      <div id="progetti"  style={{fontFamily: 'MyCustomFont', fontSize: '20px'}}>
+          <h1 className="titolo-Progetti">
+            I nostri Progetti
+          </h1>
+          <div className="row mt-5" >
+            <div className="col-md-6">
+               <Card sx={{ minWidth: 275 }}>
+                <CardContent className="p-0">
+                  <div className="p-3" variant="h5" style={{backgroundColor:"#5A9BE5", display: "flex", alignItems: "center", justifyContent: "center",}}>
+                  <h5 style={{fontSize:"35px", color:"#174081"}}>PrediHealth <MonitorHeartIcon/></h5> 
+                  </div>
+                  <Typography className="p-4" variant="body2" >
+                  <div style={{
+                    border: '2px solid #5A9BE5',  // Imposta il colore e la larghezza del bordo
+                    borderRadius: '8px',  // Opzionale: per bordi arrotondati
+                    padding: '16px',  // Assicurati che il padding sia presente
+                  }}>
+                    MEDINET è parte attiva nel progetto PrediHealth, contribuendo alla selezione e all’implementazione di una piattaforma IoT web-based per il monitoraggio remoto dei pazienti a rischio di scompenso cardiaco. Il nostro impegno si concentra sull’integrazione di soluzioni tecnologiche avanzate, garantendo la conformità agli standard medici e il rispetto dei requisiti essenziali per la sicurezza e l'affidabilità dei dati sanitari.
+                    </div> 
+                  </Typography>
+                  <Typography className="p-4 pt-1" variant="body2">
+                  <div style={{
+                    border: '2px solid #5A9BE5',  // Imposta il colore e la larghezza del bordo
+                    borderRadius: '8px',  // Opzionale: per bordi arrotondati
+                    padding: '16px',  // Assicurati che il padding sia presente
+                  }}>
+                  Grazie alla nostra esperienza nell’IoT e nella gestione di infrastrutture digitali, lavoriamo per offrire una piattaforma scalabile, interoperabile e sicura, facilitando il telemonitoraggio e migliorando l'efficacia della prevenzione e dell’intervento clinico.
+                    </div> 
+                  </Typography>
+
+                </CardContent>
+                <CardActions className="p-1">
+                  <Button size="large" disabled>Pagina del Progetto</Button>
+                </CardActions>
+              </Card>
+            </div>
+            <div className="col-md-6">
+               <Card sx={{ minWidth: 275 }}>
+                <CardContent className="p-0">
+                  <div className="p-3" variant="h5" style={{backgroundColor:"#5A9BE5", display: "flex", alignItems: "center", justifyContent: "center",}}>
+                  <h5 style={{fontSize:"35px", color:"#174081"}}>RespirAction <AirIcon/></h5> 
+                  </div>
+                  <Typography className="p-4" variant="body2">
+                  <div style={{
+                    border: '2px solid #5A9BE5',  // Imposta il colore e la larghezza del bordo
+                    borderRadius: '8px',  // Opzionale: per bordi arrotondati
+                    padding: '16px',  // Assicurati che il padding sia presente
+                  }}>
+                  RespirAction è un progetto dedicato al monitoraggio e alla riabilitazione dei pazienti con patologie respiratorie. MEDINET contribuisce alla realizzazione di una piattaforma IoT web-based che non solo monitora in tempo reale i parametri vitali legati alla respirazione, ma integra anche un percorso di riabilitazione per i pazienti. L'attenzione della piattaforma è rivolta a garantire una gestione sicura e continua dei dati, nel pieno rispetto degli standard medici, e a facilitare il recupero della capacità respiratoria attraverso esercizi personalizzati.
+                    </div> 
+                  </Typography>
+                  <Typography className="p-4 pt-1" variant="body2">
+                  <div style={{
+                    border: '2px solid #5A9BE5',  // Imposta il colore e la larghezza del bordo
+                    borderRadius: '8px',  // Opzionale: per bordi arrotondati
+                    padding: '16px',  // Assicurati che il padding sia presente
+                  }}>
+                  Il nostro obiettivo è offrire una soluzione che permetta ai pazienti di gestire le proprie condizioni respiratorie con un approccio innovativo, continuo e facilmente accessibile, migliorando la qualità della loro vita e il successo delle terapie riabilitative.
+                    </div> 
+                  </Typography>
+
+                </CardContent>
+                <CardActions className="p-1">
+                  <Button size="large" disabled>Pagina del Progetto</Button>
+                </CardActions>
+              </Card>
+            </div>
+          </div>
       </div>
 
       {/*--------------------- FINE SEZIONE "PROGETTI"---------------------------------------------------------------------------------- */}
