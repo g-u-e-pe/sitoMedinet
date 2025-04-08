@@ -3,9 +3,9 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import MediNet from '../assets/images/logoMedinetremove.png'
-import MediNetOmbra from '../assets/images/logoMedinetOmbraRemove.png'
-import text from '../assets/images/MedinetTextRemove.png'
+import MediNet from '../assets/images/logoMedinetOmbraRemove.png'
+import MediNetOmbra from '../assets/images/logoMedinetOmbraRemove2.png'
+import text from '../assets/images/medinetNewText2.png'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useMediaQuery } from "@mui/material"; // Importa useMediaQuery
