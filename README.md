@@ -94,7 +94,7 @@ bash -> npm run build
 ### Contatti
 Se hai domande o suggerimenti, non esitare a contattarci.
 
-Email: sannys387@gmail.com 
-defilippo.giuseppe.98@gmail.com
+Email: sannys387@gmail.com (grande sanny)
+defilippo.giuseppe.98@gmail.com (grande peppe)
 
 Sito http://www.medinetsrl.eu/
